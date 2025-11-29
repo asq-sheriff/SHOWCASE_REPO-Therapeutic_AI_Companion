@@ -7,7 +7,7 @@
 ---
 
 ![Platform](https://img.shields.io/badge/Platform-Production_Ready-brightgreen?style=for-the-badge)
-![Screenshots](https://img.shields.io/badge/Screenshots-35+-blue?style=for-the-badge)
+![Screenshots](https://img.shields.io/badge/Screenshots-32-blue?style=for-the-badge)
 ![Dashboards](https://img.shields.io/badge/Dashboards-5_Roles-orange?style=for-the-badge)
 
 </div>
@@ -28,11 +28,21 @@ Lilo Engine provides **role-based dashboards** for every stakeholder in the seni
 
 ---
 
+## Authentication
+
+### Login Screen
+
+![Login Screen](../assets/demo/login-screen.png)
+
+*Clean, accessible login interface with role-based access*
+
+---
+
 ## Resident Experience
 
 ### Personalized Dashboard
 
-<img width="1666" alt="Resident Dashboard" src="https://github.com/user-attachments/assets/1fb3eb11-15c1-4032-bc61-cf0e252a4772" />
+![Resident Dashboard](../assets/demo/resident-dashboard.png)
 
 *Elderly-optimized dashboard with large touch targets and clear visual hierarchy*
 
@@ -47,7 +57,7 @@ Lilo Engine provides **role-based dashboards** for every stakeholder in the seni
 
 ### Weekly Schedule
 
-<img width="1037" alt="Weekly Schedule" src="https://github.com/user-attachments/assets/0ca81e14-d3cb-486a-87b4-3468ec4cd8e9" />
+![Weekly Schedule](../assets/demo/resident-schedule.png)
 
 *Activity calendar with appointments, activities, and family visits*
 
@@ -57,13 +67,9 @@ Lilo Engine provides **role-based dashboards** for every stakeholder in the seni
 
 The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental health support:
 
-<img width="1037" alt="Lilo Conversation 1" src="https://github.com/user-attachments/assets/b743ec52-e706-41a6-9b68-7cc0512db7e9" />
+![Lilo Chat](../assets/demo/resident-chat.png)
 
-<img width="1037" alt="Lilo Conversation 2" src="https://github.com/user-attachments/assets/a0fb023f-7633-45c3-9908-3eaaabda5bad" />
-
-<img width="1037" alt="Lilo Conversation 3" src="https://github.com/user-attachments/assets/bbb53bf9-df86-40aa-9d3f-91a3310dcb34" />
-
-<img width="1037" alt="Lilo Conversation 4" src="https://github.com/user-attachments/assets/cdbaaa0b-6716-411d-9b62-7d10b4f3fd54" />
+![Lilo Chat Typing](../assets/demo/resident-chat-typing.png)
 
 **Conversational AI Features:**
 - 7 therapeutic agents with evidence-based interventions
@@ -73,9 +79,9 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ---
 
-### Wellness Check
+### Wellness Assessment
 
-<img width="1037" alt="Wellness Check" src="https://github.com/user-attachments/assets/f70de4ce-851d-4caa-b7f9-5ceab76f1a66" />
+![Wellness Assessment](../assets/demo/wellness-assessment.png)
 
 *Clinical assessments with gentle, encouraging language*
 
@@ -87,9 +93,9 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ---
 
-### Progress Tracking
+### Wellness Tracking
 
-<img width="1037" alt="Progress Tracking" src="https://github.com/user-attachments/assets/534315d9-2481-4d32-b485-fcf0fc239996" />
+![Wellness Tracking](../assets/demo/wellness-tracking.png)
 
 *Progress visualization with trends and goal tracking*
 
@@ -97,33 +103,33 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Wellness Resources
 
-<img width="1037" alt="Wellness Resources" src="https://github.com/user-attachments/assets/5a2ff9d2-c2e7-4678-bdfb-5a2a389f3c4b" />
+![Wellness Resources](../assets/demo/wellness-resources.png)
 
 *Curated wellness articles, breathing exercises, and relaxation techniques*
 
 ---
 
-### Contacts
+### Important Contacts
 
-<img width="1037" alt="Contacts" src="https://github.com/user-attachments/assets/9d745398-417f-40ea-bf31-20f236bd85b2" />
+![Important Contacts](../assets/demo/important-contacts.png)
 
 *One-tap access to emergency contacts and care team*
 
 ---
 
-### Preferences
+### Crisis Support
 
-<img width="1037" alt="Preferences" src="https://github.com/user-attachments/assets/d67a2fdd-3664-452d-90bc-60b1058650ce" />
+![Crisis Support](../assets/demo/crisis-support.png)
 
-*Personalization settings for accessibility and communication preferences*
+*Immediate access to crisis resources and care team notification*
 
 ---
 
 ## Family Experience
 
-### Family Contact Dashboard
+### Family Dashboard
 
-<img width="1037" alt="Family Dashboard" src="https://github.com/user-attachments/assets/61bc86ed-5202-4768-9bd1-ca393e012ba5" />
+![Family Dashboard](../assets/demo/family-dashboard.png)
 
 *Stay connected with your loved one's care journey*
 
@@ -135,17 +141,25 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ---
 
-### Messages
+### Family Overview
 
-<img width="1037" alt="Family Messages" src="https://github.com/user-attachments/assets/3de6eb1b-d3e4-4b04-96f3-f3ccc672d190" />
+![Family Overview](../assets/demo/family-overview.png)
+
+*Comprehensive view of loved one's wellbeing*
+
+---
+
+### Family Communication
+
+![Family Communication](../assets/demo/family-communication.png)
 
 *Secure messaging with residents and care staff*
 
 ---
 
-### Support Resources
+### Family Resources
 
-<img width="1037" alt="Support Resources" src="https://github.com/user-attachments/assets/1a1b87cf-16d7-4cd3-9ca7-2fd95a4a0c7b" />
+![Family Resources](../assets/demo/family-resources.png)
 
 *Educational materials and caregiver support guides*
 
@@ -153,17 +167,17 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ## Care Staff Experience
 
-### Care Staff Dashboard
+### Caregiver Dashboard
 
-<img width="1037" alt="Care Staff Dashboard" src="https://github.com/user-attachments/assets/9242ab49-ec7a-4faf-a4fe-9e7d53d89aa9" />
+![Caregiver Dashboard](../assets/demo/caregiver-dashboard.png)
 
 *Multi-resident management with real-time status updates*
 
 ---
 
-### Resident Status
+### Resident Cards
 
-<img width="1037" alt="Resident Status" src="https://github.com/user-attachments/assets/73b0d3eb-c621-45a7-a99e-f882bd4ae2df" />
+![Resident Cards](../assets/demo/resident-cards.png)
 
 *At-a-glance status cards with color-coded risk levels*
 
@@ -171,7 +185,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Daily Reports
 
-<img width="1037" alt="Daily Reports" src="https://github.com/user-attachments/assets/e5416108-dc6f-4b31-a447-135c8c885c33" />
+![Daily Reports](../assets/demo/daily-reports.png)
 
 *Wellness summaries, activity logs, and handoff notes*
 
@@ -179,47 +193,15 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Care Schedule
 
-<img width="1037" alt="Care Schedule" src="https://github.com/user-attachments/assets/c69c9ae9-aeaf-4c29-9a3e-af3cd08fe9fa" />
+![Care Schedule](../assets/demo/care-schedule.png)
 
 *Shift management, task assignment, and team calendar*
 
 ---
 
-### User Messages
-
-<img width="1037" alt="User Messages" src="https://github.com/user-attachments/assets/00c217f9-a8f8-4992-900f-a2a7f73c0a48" />
-
-*Communication hub for care coordination*
-
----
-
-### Crisis History
-
-<img width="1170" alt="Crisis History" src="https://github.com/user-attachments/assets/55f3a6a9-6a57-4d5e-8480-7955c1f27934" />
-
-*Complete audit trail of crisis events and responses*
-
----
-
-### Safety Plans
-
-<img width="1037" alt="Safety Plans" src="https://github.com/user-attachments/assets/d48211c1-e54a-4cae-93f5-4c5959343675" />
-
-*Personalized safety plans for each resident*
-
----
-
-### Training Materials
-
-<img width="1037" alt="Training Materials" src="https://github.com/user-attachments/assets/9c8bfcc4-911e-4a82-9fc1-d4ea09d4b5c0" />
-
-*Staff training resources and crisis response protocols*
-
----
-
 ### Crisis Alerts
 
-<img width="1037" alt="Crisis Alerts" src="https://github.com/user-attachments/assets/b0d0b5bb-e44f-4ee0-b89a-8ab2ffaf4509" />
+![Crisis Alerts](../assets/demo/crisis-alerts.png)
 
 *Real-time crisis notifications with severity levels and action buttons*
 
@@ -233,27 +215,19 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ## Care Provider Experience
 
-### Care Provider Dashboard
+### Provider Dashboard
 
-<img width="1170" alt="Care Provider Dashboard" src="https://github.com/user-attachments/assets/e5b59e05-9274-42c6-aa83-7ad11b544626" />
+![Provider Dashboard](../assets/demo/provider-dashboard.png)
 
 *Clinical oversight with population health metrics*
 
 ---
 
-### Patient Overview
+### Provider Analytics
 
-<img width="1170" alt="Patient Overview" src="https://github.com/user-attachments/assets/95c240c2-414d-442a-9531-e198fd8c9f47" />
+![Provider Analytics](../assets/demo/provider-analytics.png)
 
-*Comprehensive patient profiles with risk stratification*
-
----
-
-### Patient Clinical Management
-
-<img width="1170" alt="Patient Clinical Management" src="https://github.com/user-attachments/assets/db7c083d-059a-4a76-bbc2-690f94e89744" />
-
-*Treatment plans, assessments, and outcome tracking*
+*Comprehensive analytics and outcome tracking*
 
 ---
 
@@ -261,7 +235,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Admin Dashboard
 
-<img width="1170" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/5c1a05b4-ca9c-4616-8ccc-4a99ebbe8333" />
+![Admin Dashboard](../assets/demo/admin-dashboard.png)
 
 *Comprehensive system management and monitoring*
 
@@ -269,7 +243,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### User Management
 
-<img width="1170" alt="User Management" src="https://github.com/user-attachments/assets/6afad0a9-d8f5-42b1-9025-42fe28bb3892" />
+![User Management](../assets/demo/user-management.png)
 
 *Role-based access control and user administration*
 
@@ -277,47 +251,61 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### System Analytics
 
-<img width="1170" alt="System Analytics" src="https://github.com/user-attachments/assets/28a9a022-3f20-43d2-bce3-46a65a9abf87" />
+![System Analytics 1](../assets/demo/admin-analytics-1.png)
+
+![System Analytics 2](../assets/demo/admin-analytics-2.png)
 
 *Usage metrics, feature adoption, and growth trends*
 
 ---
 
-### Maintenance
+### System Overview
 
-<img width="1170" alt="Maintenance" src="https://github.com/user-attachments/assets/bd48c81c-54f6-4285-8fca-7a62afab5e40" />
+![System Overview](../assets/demo/system-overview.png)
 
-*System health monitoring and maintenance tools*
-
----
-
-### HIPAA Security & Compliance
-
-<img width="1170" alt="HIPAA Security & Compliance" src="https://github.com/user-attachments/assets/630df788-90fe-4cfa-9e79-d4db78e0e372" />
-
-*Full HIPAA §164.312 technical safeguards compliance*
-
-**Compliance Features:**
-- Audit logging with HMAC integrity
-- Access control monitoring
-- Encryption status
-- Compliance reporting
+*Platform health and service status monitoring*
 
 ---
 
-### Performance Monitoring
+## Design System
 
-<img width="1170" alt="Performance Monitoring" src="https://github.com/user-attachments/assets/9eeaa1b1-8ce0-4770-89bb-e9af99532fa4" />
+### Architecture
 
-*Real-time system metrics and API response times*
+![Architecture Diagram](../assets/demo/architecture-diagram.png)
+
+*Complete system architecture overview*
 
 ---
 
-### Settings
+### Touch Targets
 
-<img width="1170" alt="Settings" src="https://github.com/user-attachments/assets/77c18a56-60f4-4cdf-b323-bbd3e9baab94" />
+![Touch Targets](../assets/demo/touch-targets.png)
 
-*System configuration and platform settings*
+*Senior-friendly button sizes following accessibility guidelines*
+
+---
+
+### Typography
+
+![Typography](../assets/demo/typography.png)
+
+*Clear, readable typography scale for elderly users*
+
+---
+
+### Color System
+
+![Color System](../assets/demo/color-system.png)
+
+*Therapeutic color palette with high contrast ratios*
+
+---
+
+### Contrast
+
+![Contrast](../assets/demo/contrast.png)
+
+*WCAG AAA compliant contrast ratios*
 
 ---
 
@@ -354,12 +342,14 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 | Role | Screenshots | Features Shown |
 |------|-------------|----------------|
-| **Resident** | 11 | Dashboard, Schedule, Lilo Chat, Wellness, Contacts |
-| **Family** | 3 | Dashboard, Messages, Resources |
-| **Care Staff** | 9 | Dashboard, Status, Reports, Crisis Management |
-| **Care Provider** | 3 | Dashboard, Patient Overview, Clinical Management |
-| **Admin** | 7 | Dashboard, Users, Analytics, Compliance, Settings |
-| **Total** | **33+** | Complete platform coverage |
+| **Authentication** | 1 | Login screen |
+| **Resident** | 9 | Dashboard, Schedule, Chat, Wellness, Contacts, Crisis |
+| **Family** | 4 | Dashboard, Overview, Communication, Resources |
+| **Care Staff** | 5 | Dashboard, Cards, Reports, Schedule, Alerts |
+| **Care Provider** | 2 | Dashboard, Analytics |
+| **Admin** | 4 | Dashboard, Users, Analytics, Overview |
+| **Design System** | 5 | Architecture, Touch, Typography, Colors, Contrast |
+| **Total** | **32** | Complete platform coverage |
 
 ---
 
