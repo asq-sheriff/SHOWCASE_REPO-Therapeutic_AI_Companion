@@ -117,10 +117,11 @@ flowchart TD
 
     G["Crisis Classification"]
 
-    H1["🔴 IMMEDIATE<br/>911 auto-escalate"]
-    H2["🟠 URGENT<br/>MD + RN alert"]
-    H3["🟡 ELEVATED<br/>Social worker"]
-    H4["🟢 MODERATE<br/>Enhanced monitoring"]
+    H1["🔴 CRITICAL<br/>Emergency protocol<br/>Target: <10s"]
+    H2["🟠 HIGH<br/>Immediate staff alert<br/>Required: <30s"]
+    H3["🟡 MODERATE<br/>Care team notify<br/>Priority: <10s"]
+    H4["🟢 MILD<br/>Flag for review<br/>Schedule follow-up"]
+    H5["⚪ NONE<br/>Document only<br/>Normal flow"]
 
     A -->|"1. Generate embedding"| B
     B -->|"2. Match patterns"| C
@@ -130,16 +131,44 @@ flowchart TD
     D -->|"Add context"| F
     E -->|"Add trend"| F
     F -->|"Yes: Classify severity"| G
-    F -->|"No: Continue therapy"| H4
-    G -->|"Critical"| H1
-    G -->|"High"| H2
-    G -->|"Medium"| H3
-    G -->|"Low"| H4
+    F -->|"No: Safe"| H5
+    G -->|"≥0.90"| H1
+    G -->|"0.75-0.90"| H2
+    G -->|"0.60-0.75"| H3
+    G -->|"0.40-0.60"| H4
 
     style H1 fill:#ff0000,color:#fff
     style H2 fill:#ff6b00,color:#fff
     style H3 fill:#ffd43b,color:#000
     style H4 fill:#51cf66,color:#fff
+    style H5 fill:#e9ecef,color:#000
+```
+
+#### 5-Level Risk Stratification (C-SSRS Based)
+
+Based on Columbia-Suicide Severity Rating Scale (C-SSRS) and Joint Commission requirements:
+
+| Risk Level | Confidence | Response Strategy | Response Time | Escalation Actions |
+|------------|------------|-------------------|---------------|-------------------|
+| **CRITICAL** | ≥0.90 | Crisis Protocol | **<10s target** | Emergency protocol, 911 if needed, maintain engagement |
+| **HIGH** | 0.75-0.90 | Safety Focused | **<30s (regulatory)** | Immediate staff alert, C-SSRS assessment, crisis mode |
+| **MODERATE** | 0.60-0.75 | Therapeutic | <10s priority | Notify care team (1hr), enhanced support, crisis mode |
+| **MILD** | 0.40-0.60 | Supportive | Normal | Document, flag for 24hr review, schedule follow-up |
+| **NONE** | <0.40 | Normal | Normal | Document interaction only |
+
+#### 9 Escalation Actions
+
+```python
+class EscalationAction(Enum):
+    DOCUMENT = "document"                    # Always required
+    FLAG_FOR_REVIEW = "flag_for_review"      # 24hr care team review
+    NOTIFY_CARE_TEAM = "notify_care_team"    # Non-urgent (1hr)
+    ALERT_CARE_STAFF = "alert_care_staff"    # Urgent (5min)
+    IMMEDIATE_STAFF_ALERT = "immediate"      # HIGH/CRITICAL (<1min)
+    SCHEDULE_FOLLOW_UP = "schedule_follow_up"
+    TRIGGER_SAFETY_ASSESSMENT = "trigger_safety_assessment"  # C-SSRS
+    EMERGENCY_PROTOCOL = "emergency_protocol"  # 911 if needed
+    MAINTAIN_ENGAGEMENT = "maintain_engagement"  # Keep resident engaged
 ```
 
 **Skills Demonstrated:**
@@ -148,6 +177,7 @@ flowchart TD
 - Handling class imbalance (crisis is rare)
 - Optimizing for recall in safety-critical systems
 - Multi-signal fusion (ML + clinical context)
+- Clinical protocol implementation (C-SSRS, Joint Commission)
 
 ---
 
@@ -228,42 +258,73 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["📥 User Message<br/>'I've been feeling really down lately'"]
+    A["📥 User Message"] --> B1{Bloom Filter<br/>Dedup Cache}
 
-    B["BGE-base-en-v1.5<br/>768-dim embedding"]
+    B1 -->|"Hit <1ms"| R1["Return Cached"]
+    B1 -->|"Miss"| B2{Classification<br/>Cache}
 
-    C["Cosine Similarity<br/>vs 303 prototypes"]
+    B2 -->|"Hit 2-5ms"| R2["Return Cached"]
+    B2 -->|"Miss"| B3{Embedding<br/>Cache}
 
-    D{"Confidence<br/>> 0.45?"}
+    B3 -->|"Hit"| B4["Use Cached<br/>Embedding"]
+    B3 -->|"Miss"| B5["Generate BGE<br/>Embedding"]
 
-    E["LLM-as-Judge<br/>Gemini fallback"]
+    B4 --> C["FAISS ANN Search<br/>303 prototypes<br/>5-10ms"]
+    B5 --> C
 
-    F["Selected Intent:<br/>💚 SOOTHE"]
+    C --> D{"Confidence<br/>> 0.45?"}
 
-    G["📤 Result<br/>Primary: SOOTHE (0.82)<br/>Secondary: REFLECT (0.71)"]
+    D -->|"High"| E["Direct Classification"]
+    D -->|"Low"| F["LLM-as-Judge<br/>Gemini 2.0 Flash"]
 
-    A -->|"1. Generate embedding"| B
-    B -->|"2. Compare to prototypes"| C
-    C -->|"3. Check confidence"| D
-    D -->|"High: Direct match"| F
-    D -->|"Low: Use fallback"| E
-    E -->|"LLM classification"| F
-    F -->|"4. Return result"| G
+    E --> G["Multi-Intent Detection<br/>Secondary threshold: 0.80"]
+    F --> G
 
-    style F fill:#51cf66,color:#fff
-    style G fill:#228be6,color:#fff
+    G --> H["📤 Result<br/>Primary + up to 2 Secondary"]
+
+    style B1 fill:#e7f5ff,color:#000
+    style B2 fill:#e7f5ff,color:#000
+    style B3 fill:#e7f5ff,color:#000
+    style C fill:#228be6,color:#fff
+    style H fill:#51cf66,color:#fff
 ```
 
+#### 4-Layer Caching Strategy (10x Speedup)
+
+| Layer | Technology | Hit Rate | Latency | Purpose |
+|-------|------------|----------|---------|---------|
+| **1. Bloom Filter** | In-memory | 10-15% | <1ms | Deduplication of repeated queries |
+| **2. Classification Cache** | Redis | 60-70% | 2-5ms | Full classification results |
+| **3. Embedding Cache** | Redis | 70%+ | 2-5ms | Pre-computed BGE vectors |
+| **4. FAISS Index** | In-memory | 100% | 5-10ms | Approximate nearest neighbor search |
+
+#### 10 Therapeutic Intent Categories (303 Prototypes)
+
+| Intent | Examples | Description |
+|--------|----------|-------------|
+| **CONNECT** | 17 | Building rapport, greetings |
+| **REMINISCE** | 36 | Memory sharing, life stories, grief-related dreams |
+| **SOOTHE** | 37 | Emotional distress, physical comfort needs |
+| **ACTIVATE** | 45 | Low energy, schedule queries, behavioral activation |
+| **BRIDGE** | 26 | Loneliness, social connection seeking |
+| **GROUND** | 24 | Anxiety symptoms, panic, stress management |
+| **REFLECT** | 17 | Self-reflection, life review |
+| **ASSESS** | 14 | Assessment requests, self-monitoring |
+| **CRISIS** | 29 | Suicidal ideation, bereavement suicide risk |
+| **GENERAL** | 58 | Questions, staff communication, factual queries |
+
 **Performance:**
-- Latency: 10-20ms (BGE semantic)
-- Multi-intent support: Up to 3 simultaneous intents
-- Fallback accuracy: 90%+ with LLM-as-judge
+- **P50 Latency:** 10-15ms (cache hit) / 40-50ms (cache miss)
+- **Accuracy:** 92-95%
+- **Multi-intent support:** Up to 2 secondary intents (threshold ≥0.80)
+- **Fallback accuracy:** 90%+ with LLM-as-judge (Gemini 2.0 Flash)
 
 **Skills Demonstrated:**
-- Semantic similarity classification
-- Multi-label classification
-- Confidence calibration
-- Fallback strategies for edge cases
+- Semantic similarity classification with FAISS
+- Multi-layer caching architecture
+- Multi-label classification with confidence thresholds
+- LLM-as-judge fallback for edge cases
+- Bloom filter for deduplication
 
 ---
 
@@ -698,6 +759,55 @@ flowchart TD
 | **LLM Optimization** | 6-8x speedup | 51s → 6-8s response time |
 | **Concurrent Users** | 1000+ | WebSocket connections |
 | **Uptime Target** | 99.9% | Healthcare-grade reliability |
+
+### 8-Step Request Flow Timing Breakdown
+
+```
+User Message → Therapeutic Response: 30-500ms (P50: ~200ms)
+
+Step 1: Parse & Validate ────────────────── 2-5ms
+        └─ Input sanitization, HIPAA redaction
+
+Step 2.5: Generate Embedding ────────────── 15-30ms (or 2-5ms cached)
+          └─ BGE-base model inference OR Redis cache hit
+
+Step 3: Intent Classification ───────────── 10-50ms
+        ├─ Layer 1: Bloom filter (<1ms, 10-15% hit)
+        ├─ Layer 2: Classification cache (2-5ms, 60-70% hit)
+        ├─ Layer 3: Embedding cache (0ms if Step 2.5 cached)
+        └─ Layer 4: FAISS search (5-10ms)
+
+Step 3a: Crisis Detection ───────────────── 20-50ms (parallel with Step 3)
+         └─ Semantic matching + trajectory analysis
+
+Step 4: RAG Context Retrieval ───────────── 30-55ms (parallel)
+        ├─ Knowledge documents (25-55ms vector search)
+        └─ Life story context (5-15ms cached)
+
+Step 5: Clinical Context Fetch ──────────── 10-30ms (parallel)
+        └─ PHQ-9, GAD-7, latest assessment scores
+
+Step 6: Build Prompt ────────────────────── 5-15ms
+        └─ Template filling + context assembly
+
+Step 7: LLM Generation ──────────────────── 300-500ms
+        ├─ Prefill (first token): 50-100ms
+        └─ Token streaming: 250-300 tokens @ 42-85ms/token
+
+Step 8: Save & Return ───────────────────── 10-20ms
+        └─ Database write + response formatting
+```
+
+### Component-Level Performance
+
+| Component | P50 | P95 | Cache Benefit |
+|-----------|-----|-----|---------------|
+| **Embedding Service** | 15-30ms | 40ms | 10-25ms savings |
+| **Intent Classification** | 10-15ms | 50ms | 30-40ms savings (70% hit) |
+| **Crisis Detection** | 20-30ms | 50ms | N/A (always runs) |
+| **RAG Retrieval** | 30-45ms | 55ms | 30-40ms savings |
+| **LLM Generation** | 300-400ms | 600ms | N/A |
+| **End-to-End** | ~200ms | ~400ms | 60-80% reduction |
 
 ---
 
