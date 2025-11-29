@@ -60,22 +60,27 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 
 <table>
 <tr>
-<td align="center" width="25%">
+<td align="center" width="20%">
 <h1>100%</h1>
 <b>Crisis Recall</b><br/>
 <sub>Zero false negatives on 871 test scenarios</sub>
 </td>
-<td align="center" width="25%">
-<h1>&lt;1s</h1>
-<b>Detection Time</b><br/>
-<sub>30x faster than regulatory requirement</sub>
+<td align="center" width="20%">
+<h1>~200ms</h1>
+<b>P50 Latency</b><br/>
+<sub>Full request-to-response (P95: ~450ms)</sub>
 </td>
-<td align="center" width="25%">
+<td align="center" width="20%">
 <h1>17</h1>
 <b>Microservices</b><br/>
 <sub>Go + Python distributed architecture</sub>
 </td>
-<td align="center" width="25%">
+<td align="center" width="20%">
+<h1>303</h1>
+<b>Intent Prototypes</b><br/>
+<sub>10 therapeutic categories via FAISS ANN</sub>
+</td>
+<td align="center" width="20%">
 <h1>7</h1>
 <b>AI Agents</b><br/>
 <sub>Evidence-based therapeutic interventions</sub>
@@ -92,10 +97,11 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 <td width="50%" valign="top">
 
 ### AI/ML Engineering
-- **Multi-agent orchestration** with intent-based routing
-- **RAG pipeline** with 6 parallel retrieval streams
-- **Custom crisis detection ML** — BGE embeddings + trajectory analysis
-- **LLM inference** — Qwen 2.5-7B on Apple Silicon (Metal GPU)
+- **Multi-agent orchestration** — 303 intent prototypes across 10 therapeutic categories
+- **RAG pipeline** — 6 parallel retrieval streams with asyncio.gather() (~2x speedup)
+- **4-layer caching** — Bloom Filter → Classification → Embedding → FAISS (60-70% hit rate)
+- **Custom crisis detection** — BGE embeddings + 5-message trajectory analysis
+- **LLM inference** — Qwen 2.5-7B on Apple Silicon (Metal GPU, 45-50 tok/s)
 - **Voice pipeline** — Whisper STT + Piper TTS
 
 </td>
@@ -243,7 +249,17 @@ The safety-first architecture processes every message through the crisis detecti
 | **Semantic Matching** | BGE embeddings against 871 crisis patterns | <50ms |
 | **Clinical Context** | PHQ-9, GAD-7, life story risk factors | Integrated |
 | **Trajectory Analysis** | 5-message sliding window for deterioration | Real-time |
-| **Severity Grading** | IMMEDIATE → URGENT → ELEVATED → MODERATE | <1s total |
+| **5-Level C-SSRS Stratification** | CRITICAL → HIGH → MODERATE → MILD → NONE | <1s total |
+
+### Risk-Level Response Times (Joint Commission Compliant)
+
+| Risk Level | Confidence | Response Time | Actions |
+|------------|------------|---------------|---------|
+| 🔴 **CRITICAL** | ≥0.90 | **<10s target** | Emergency protocol, 911 if needed |
+| 🟠 **HIGH** | 0.75-0.90 | **<30s (regulatory)** | Immediate staff alert, C-SSRS assessment |
+| 🟡 **MODERATE** | 0.60-0.75 | <10s priority | Care team notification, crisis mode |
+| 🟢 **MILD** | 0.40-0.60 | Normal | Flag for 24hr review, schedule follow-up |
+| ⚪ **NONE** | <0.40 | Normal | Document only |
 
 **Result:** 100% recall (zero missed crises), <5% false positive rate
 
