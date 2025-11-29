@@ -31,7 +31,7 @@
 
 <br/>
 
-<img src="https://github.com/user-attachments/assets/1fb3eb11-15c1-4032-bc61-cf0e252a4772" alt="Lilo Engine Dashboard" width="800"/>
+<img src="assets/demo/caregiver-dashboard-new.png" alt="Lilo Engine Dashboard - Multi-resident healthcare management with real-time crisis monitoring" width="800"/>
 
 <br/>
 
