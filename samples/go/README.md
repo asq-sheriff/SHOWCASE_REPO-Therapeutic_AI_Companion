@@ -54,3 +54,4 @@ These services integrate with:
 | WebSocket Latency | <100ms | <50ms |
 | Health Check Interval | 10s | 10s |
 | Circuit Breaker Recovery | 30s | 30s |
+
