@@ -32,7 +32,7 @@ Lilo Engine provides **role-based dashboards** for every stakeholder in the seni
 
 ### Login Screen
 
-![Login Screen](../assets/demo/login-screen-new.png)
+![Lilo Engine Login Screen - HIPAA compliant authentication with role-based access control](../assets/demo/login-screen-new.png)
 
 *Clean, accessible login interface with role-based access*
 
@@ -52,7 +52,7 @@ Lilo Engine provides **role-based dashboards** for every stakeholder in the seni
 
 The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental health support:
 
-![Lilo Chat](../assets/demo/lilo-conversation.png)
+![Lilo AI Therapeutic Conversation - Multi-agent AI providing evidence-based mental health support](../assets/demo/lilo-conversation.png)
 
 **Conversational AI Features:**
 - 7 therapeutic agents with evidence-based interventions
@@ -64,7 +64,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Wellness Assessment
 
-![Wellness Assessment](../assets/demo/resident-wellness-assessment-new.png)
+![Mental Health Wellness Assessment - PHQ-9, GAD-7, WHO-5 clinical screening tools](../assets/demo/resident-wellness-assessment-new.png)
 
 *Clinical assessments with gentle, encouraging language*
 
@@ -94,7 +94,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Crisis Detection
 
-![Crisis Detection](../assets/demo/resident-crisis-detection-new.png)
+![Real-time Crisis Detection Dashboard - 5-level C-SSRS risk stratification with instant care team alerts](../assets/demo/resident-crisis-detection-new.png)
 
 *Immediate access to crisis resources and care team notification*
 
@@ -144,7 +144,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Caregiver Dashboard
 
-![Caregiver Dashboard](../assets/demo/caregiver-dashboard-new.png)
+![Healthcare Staff Dashboard - Multi-resident management with real-time wellness status and crisis alerts](../assets/demo/caregiver-dashboard-new.png)
 
 *Multi-resident management with real-time status updates*
 
@@ -274,7 +274,7 @@ The heart of Lilo Engine - a therapeutic AI companion providing 24/7 mental heal
 
 ### Security & Compliance
 
-![Security Compliance](../assets/demo/admin-security-compliance.png)
+![HIPAA Compliance Dashboard - Security monitoring, audit logs, and regulatory compliance tracking](../assets/demo/admin-security-compliance.png)
 
 *HIPAA compliance monitoring and security controls*
 

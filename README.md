@@ -8,9 +8,11 @@
 
 # Lilo Engine
 
-## Production-Grade Multi-Agent Therapeutic AI Platform
+## AI-Powered Mental Health Platform | Healthcare AI | Production-Grade Microservices
 
-**AI/ML Engineering | Healthcare Technology | Microservices Architecture**
+**Multi-Agent Therapeutic AI** · **Real-Time Crisis Detection** · **HIPAA Compliant**
+
+*Python · Go · PyTorch · Transformers · RAG · LLM · Microservices · PostgreSQL · Redis*
 
 <br/>
 
@@ -90,6 +92,17 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 
 ---
 
+## Quick Navigation
+
+| You Are | Start Here | Then Explore |
+|---------|------------|--------------|
+| **Recruiter / Hiring Manager** | [Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) | [Code Samples](docs/CODE_SAMPLES.md) |
+| **Investor / Partner** | [Executive Summary](EXECUTIVE_SUMMARY.md) | [Investor Overview](docs/INVESTOR_OVERVIEW.md) |
+| **Engineer** | [Process Flow](docs/PROCESS_FLOW.md) | [Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) |
+| **Healthcare Professional** | [Demo Showcase](docs/DEMO_SHOWCASE.md) | [FAQ](FAQ.md) |
+
+---
+
 ## What I Built
 
 <table>
@@ -120,7 +133,49 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 
 ---
 
+## Business Opportunity
+
+| Metric | Value |
+|--------|-------|
+| **Total Addressable Market** | $3T+ (Elderly Care + Mental Health) |
+| **Target Market** | 30,600 US Assisted Living Facilities |
+| **Revenue Potential** | $720M-2.16B ARR at scale |
+| **Unit Economics** | $50-150/resident/month |
+| **Facility ROI** | $50K-150K annual savings per 100 beds |
+
+[Full Market Analysis](docs/INVESTOR_OVERVIEW.md) | [Partnership Models](docs/PARTNERSHIP_OPPORTUNITIES.md)
+
+---
+
+## Development Stage
+
+| Milestone | Status |
+|-----------|--------|
+| Platform Architecture (17 services) | Complete |
+| HIPAA Compliance (§164.312) | Complete |
+| Crisis Detection (100% recall) | Validated |
+| Clinical Pilot Planning | In Progress |
+| First Enterprise Customers | Q2 2026 |
+
+---
+
 ## Architecture
+
+```mermaid
+flowchart LR
+    Client[Clients] --> Gateway[API Gateway<br/>NGINX + Auth]
+    Gateway --> AI[AI Router<br/>Intent + Crisis]
+    AI --> Processing[Core Processing<br/>Safety · Agents · RAG]
+    Processing --> LLM[Generation<br/>Qwen 2.5-7B]
+    LLM --> Data[(Data Layer<br/>PostgreSQL + Redis)]
+
+    style AI fill:#ff6b6b,color:#fff
+    style Processing fill:#4ecdc4,color:#fff
+    style LLM fill:#96ceb4,color:#fff
+```
+
+<details>
+<summary><b>View Full Architecture Diagram</b></summary>
 
 ```mermaid
 flowchart TB
@@ -192,12 +247,10 @@ flowchart TB
     style Gen fill:#96ceb4,color:#fff
 ```
 
-<details>
-<summary><b>View Detailed Architecture Diagram</b></summary>
-<br/>
 <img src="assets/architecture.png" alt="Detailed Platform Architecture" width="100%"/>
 
 *Complete 12-layer architecture showing all 17 microservices, data flows, and integration points*
+
 </details>
 
 ---
@@ -237,6 +290,18 @@ flowchart TB
 </td>
 </tr>
 </table>
+
+---
+
+## Technical Skills Demonstrated
+
+| Category | Technologies | Evidence |
+|----------|--------------|----------|
+| **AI/ML** | PyTorch, Transformers, RAG, FAISS, Embeddings | [Crisis Detection](docs/TECHNICAL_PORTFOLIO.md#crisis-detection-system) |
+| **Backend** | Python (FastAPI), Go (Gin), WebSockets | [Code Samples](docs/CODE_SAMPLES.md) |
+| **Data** | PostgreSQL, pgvector, Redis, Vector Search | [Process Flow](docs/PROCESS_FLOW.md) |
+| **Infrastructure** | Docker, Microservices, HIPAA Compliance | [Architecture](#architecture) |
+| **LLM Engineering** | Prompt Engineering, Context Management, Caching | [Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) |
 
 ---
 
@@ -315,8 +380,18 @@ I'm open to opportunities in **AI/ML Engineering**, **Healthcare Technology**, a
 
 ---
 
-**Built by [Aejaz Sheriff](https://www.linkedin.com/in/aejaz-sheriff/)** · AI-ML Architect / Engineer
+### Next Steps
 
-*Keywords: Python, Go, PyTorch, Transformers, LLM, RAG, Multi-Agent AI, Healthcare AI, HIPAA, Microservices, Docker, PostgreSQL, Redis, FastAPI, Real-time Systems*
+| Interest | Action |
+|----------|--------|
+| **Technical Discussion** | [Review Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) then [connect on LinkedIn](https://www.linkedin.com/in/aejaz-sheriff/) |
+| **Investment Inquiry** | [Read Executive Summary](EXECUTIVE_SUMMARY.md) then [schedule a discussion](mailto:aejaz.sheriff@gmail.com?subject=Lilo%20Engine%20Investment%20Discussion) |
+| **Partnership Opportunity** | [Explore Partnership Models](docs/PARTNERSHIP_OPPORTUNITIES.md) then [reach out](mailto:aejaz.sheriff@gmail.com?subject=Lilo%20Engine%20Partnership) |
+
+---
+
+**Built by [Aejaz Sheriff](https://www.linkedin.com/in/aejaz-sheriff/)** · AI/ML Engineer · Healthcare AI Specialist
+
+*Python · Go · PyTorch · Transformers · LLM · RAG · Multi-Agent AI · Healthcare AI · HIPAA · Microservices · Crisis Detection · Real-time Systems*
 
 </div>
