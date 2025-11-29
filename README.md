@@ -29,12 +29,6 @@
 [![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=flat-square&logo=redis&logoColor=white)](https://redis.io)
 [![Langfuse](https://img.shields.io/badge/Langfuse-Observability-5046E5?style=flat-square)](https://langfuse.com)
 
-<br/>
-
-<img src="assets/demo/caregiver-dashboard-new.png" alt="Lilo Engine Dashboard - Multi-resident healthcare management with real-time crisis monitoring" width="800"/>
-
-<br/>
-
 ### A complete AI system I designed and built from scratch — 17 microservices, 7 therapeutic agents, 100% crisis detection recall
 
 <br/>
