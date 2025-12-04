@@ -164,6 +164,13 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 
 ## Architecture
 
+<img src="assets/architecture.png" alt="Lilo Engine Platform Architecture" width="100%"/>
+
+*Complete platform architecture showing all 15 microservices (14 Docker + 1 Host), data flows, and integration points*
+
+<details>
+<summary><b>View Interactive Mermaid Diagrams</b></summary>
+
 ```mermaid
 flowchart LR
     Client[Clients] --> Gateway[API Gateway<br/>NGINX + Auth]
@@ -176,9 +183,6 @@ flowchart LR
     style Processing fill:#4ecdc4,color:#fff
     style LLM fill:#96ceb4,color:#fff
 ```
-
-<details>
-<summary><b>View Full Architecture Diagram</b></summary>
 
 ```mermaid
 flowchart TB
@@ -249,10 +253,6 @@ flowchart TB
     style RAG fill:#45b7d1,color:#fff
     style Gen fill:#96ceb4,color:#fff
 ```
-
-<img src="assets/architecture.png" alt="Detailed Platform Architecture" width="100%"/>
-
-*Complete 12-layer architecture showing all 15 microservices (14 Docker + 1 Host), data flows, and integration points*
 
 </details>
 
