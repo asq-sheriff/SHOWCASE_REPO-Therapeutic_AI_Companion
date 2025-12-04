@@ -24,11 +24,12 @@
 
 ## The Solution
 
-**Lilo Engine** is a production-ready AI platform providing **24/7 therapeutic support** for elderly residents with:
+**Lilo Engine** is a production-ready AI platform (65K+ lines, 15 microservices) providing **24/7 therapeutic support** for elderly residents with:
 
 | Capability | Performance |
 |------------|-------------|
 | **Crisis Detection** | 100% recall, <1 second response (30x faster than required) |
+| **Intent Classification** | 92-95% accuracy with 214 therapeutic prototypes |
 | **Therapeutic AI** | 7 evidence-based agents (35% depression reduction) |
 | **Voice Interface** | Accessible for elderly with vision/motor limitations |
 | **HIPAA Compliance** | Full §164.312 technical safeguards |
@@ -50,17 +51,22 @@
 
 ---
 
-## Traction & Stage
+## Traction & Stage (Accelerated Timeline)
 
-| Milestone | Status |
-|-----------|--------|
-| Platform Development (17 microservices) | ✅ Complete |
-| HIPAA Compliance (§164.312) | ✅ Complete |
-| Crisis Detection (100% recall) | ✅ Validated |
-| Clinical Pilot Planning | 🔄 In Progress |
-| First Enterprise Customers | 📋 Q2 2026 |
+| Milestone | Status | Date |
+|-----------|--------|------|
+| Platform Development (15 microservices, 65K+ lines) | ✅ Complete | Done |
+| HIPAA Compliance (§164.312) | ✅ Complete | Done |
+| Crisis Detection (100% recall) | ✅ Validated | Done |
+| 9 Additional Modules (XAI, streaming, emotion) | ✅ Complete | Dec 2025 |
+| Module Integration & Edge Prototype | 🔄 In Progress | Feb 2026 |
+| Pilot Study (n=20) | 📋 Planned | Apr 2026 |
+| First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
+| FDA De Novo Submission | 📋 Planned | Oct 2026 |
+| FDA Clearance (target) | 📋 Planned | Jun 2027 |
 
-**Built with founder's capital** — $775K-$1.55M equivalent development value with $0 external funding.
+**Built with founder's capital** — $875K-$1.7M equivalent development value with $0 external funding.
+**Total investment to FDA clearance:** $1.1-1.5M over 2 years.
 
 ---
 
@@ -68,9 +74,14 @@
 
 | Revenue Stream | Per Unit | Scale Potential |
 |----------------|----------|-----------------|
-| Platform Subscription | $50-150/resident/month | $720M-2.16B ARR (US AL) |
+| Platform Subscription | $50-75/resident/month | $720M-2.16B ARR (US AL) |
 | Medicare RPM Billing | $1,560/patient/year | $1.56M per 1K patients |
 | Family Portal Premium | $50-100/month | Additional revenue |
+
+**Revenue Milestones:**
+- Jul 2026: 3 facilities, $30K ARR
+- Dec 2026: 10 facilities, $200K ARR
+- Dec 2027: 30 facilities, **$1M ARR**
 
 **ROI for Facilities:** $50K-150K annual savings per 100-bed facility (reduced ER visits, staff efficiency, liability prevention)
 
@@ -81,10 +92,12 @@
 | Differentiator | Lilo Engine | Competitors |
 |----------------|-------------|-------------|
 | Crisis Detection | **100% recall, <1s** | 60-70%, 15-30 min |
+| Intent Classification | **92-95%, 214 prototypes** | Rule-based |
 | Target Population | **Elderly-specific** | General population |
 | Compliance | **HIPAA from day one** | Often retrofitted |
-| Deployment | **On-premise option** | Cloud-only |
+| Deployment | **On-premise/edge option** | Cloud-only |
 | Clinical Integration | **PHQ-9, GAD-7, EHR** | Limited |
+| FDA Pathway | **De Novo Oct 2026** | Unclear/none |
 
 ---
 
@@ -102,8 +115,9 @@
 
 **Aejaz Sheriff** — Founder & Technical Lead
 - Full-stack AI/ML engineer with healthcare focus
-- Built complete 17-service platform solo
-- Demonstrated: Technical depth, capital efficiency, execution
+- Built complete 15-service platform (65K+ lines) in 4 months
+- 9 additional modules complete, integration-focused execution
+- Demonstrated: Technical depth, capital efficiency, exceptional velocity
 
 **Advisors Needed:** Clinical (geriatric psychiatry), Healthcare sales, Regulatory (FDA/HIPAA)
 

@@ -71,17 +71,36 @@ The system is tuned for **zero false negatives** (100% recall) with <5% false po
 | **Embeddings** | BGE-base-en-v1.5 (fine-tuned) | Semantic search, crisis matching |
 | **Speech-to-Text** | Whisper large-v3 | Voice transcription |
 | **Text-to-Speech** | Piper TTS | Voice responses |
-| **Intent Classification** | Custom BGE + Gemini fallback | 10-category classification |
+| **Intent Classification** | Custom BGE (214 prototypes) + Gemini fallback | 10-category, 92-95% accuracy |
 
 All models can run locally on Apple Silicon or standard GPU hardware — no cloud AI dependency required.
+
+### What are the "9 complete modules" mentioned?
+
+In December 2025, we discovered that 9 major components (3,000+ lines) were fully implemented but not yet integrated into the production pipeline. This shifts our engineering focus from implementation to integration:
+
+| Module | Lines | Purpose |
+|--------|-------|---------|
+| **Coreference Resolver** | 455 | Links pronouns to entities ("his birthday" → Robert) |
+| **Ensemble Classifier** | 538 | Binary classification + adversarial detection |
+| **Crisis Explainer (XAI)** | 498 | Explainable AI with clinician reports |
+| **Streaming STT** | 664 | VAD + WebSocket sessions for elderly speech |
+| **Emotion Detector** | 667 | Acoustic + wav2vec2 ensemble |
+| **Internal Reflection** | 25KB | Self-critique + therapeutic constitution |
+| **Holistic Evaluator** | 25KB | WAI-AI adapted therapeutic metrics |
+| **Memory Consolidation** | 60KB | Cross-session semantic clustering |
+| **Situational Awareness** | 48KB | Context service + proactive triggers |
+
+**Impact:** Timeline compressed 40% — integration takes 2-3 hours per module vs weeks of new development.
 
 ### Can this run on-premise?
 
 **Yes.** The entire platform runs on a single machine:
-- 14 Docker containers
+- 14 Docker services + 1 Host service (GPU-accelerated generation)
 - Apple Silicon (M1/M2/M3) or NVIDIA GPU
 - No external API calls required
 - All data stays within facility network
+- Edge deployment option in development (target: Feb 2026)
 
 This is critical for HIPAA compliance and facilities with strict data policies.
 
@@ -90,10 +109,11 @@ This is critical for HIPAA compliance and facilities with strict data policies.
 | Component | Latency |
 |-----------|---------|
 | Crisis Detection | <1 second (regulatory: 30s) |
-| Intent Classification | 10-20ms |
-| RAG Retrieval | 45ms (6 parallel streams) |
-| Full Response | 400-500ms end-to-end |
-| Cache Hit | <5ms |
+| Intent Classification | 10-20ms (92-95% accuracy) |
+| RAG Retrieval | 45ms (5 parallel streams) |
+| LLM Generation | ~7.6s (M1 Metal, streaming enabled) |
+| Full Response | ~8s end-to-end (streaming starts ~500ms) |
+| Cache Hit | <5ms (60-80% hit rate) |
 
 ---
 
@@ -104,8 +124,13 @@ This is critical for HIPAA compliance and facilities with strict data policies.
 | Tier | Monthly/Resident | Features |
 |------|------------------|----------|
 | **Essential** | $50 | Text therapy, crisis detection, basic dashboards |
-| **Professional** | $100 | + Voice, clinical assessments, family portal |
-| **Enterprise** | $150 | + EHR integration, analytics, custom training |
+| **Professional** | $65 | + Voice, clinical assessments, family portal |
+| **Enterprise** | $75 | + EHR integration, analytics, custom training |
+
+**Revenue Milestones:**
+- Jul 2026: 3 facilities, $30K ARR
+- Dec 2026: 10 facilities, $200K ARR
+- Dec 2027: 30 facilities, **$1M ARR**
 
 **ROI for facilities:** $50K-150K annual savings per 100-bed facility from reduced ER visits, staff efficiency, and liability prevention.
 
@@ -118,7 +143,7 @@ This is critical for HIPAA compliance and facilities with strict data policies.
 | **Ginger/Headspace** | Employee wellness | Not healthcare-grade, no EHR |
 | **ElliQ** | Elderly companion | Hardware-dependent, limited therapy |
 
-**Lilo's differentiation:** Only platform combining elderly-specific design + 100% crisis recall + clinical integration + HIPAA compliance.
+**Lilo's differentiation:** Only platform combining elderly-specific design + 100% crisis recall + clinical integration + HIPAA compliance + FDA pathway (De Novo Oct 2026).
 
 ### Is there clinical evidence for this approach?
 
@@ -133,15 +158,20 @@ Yes, our therapeutic agents are based on peer-reviewed research:
 
 ### What stage is the company?
 
-| Milestone | Status |
-|-----------|--------|
-| Platform Development | ✅ Complete (17 microservices) |
-| HIPAA Compliance | ✅ Complete |
-| Crisis Detection Validation | ✅ 100% recall achieved |
-| Clinical Pilot | 🔄 Planning (Q1 2026) |
-| First Revenue | 📋 Target Q2 2026 |
+| Milestone | Status | Date |
+|-----------|--------|------|
+| Platform Development (15 microservices, 65K+ lines) | ✅ Complete | Done |
+| HIPAA Compliance | ✅ Complete | Done |
+| Crisis Detection Validation | ✅ 100% recall achieved | Done |
+| 9 Additional Modules (XAI, streaming, emotion) | ✅ Complete | Dec 2025 |
+| Module Integration & Edge Prototype | 🔄 In Progress | Feb 2026 |
+| Pilot Study (n=20) | 📋 Planned | Apr 2026 |
+| First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
+| FDA De Novo Submission | 📋 Planned | Oct 2026 |
+| FDA Clearance (target) | 📋 Planned | Jun 2027 |
 
-**Funding:** Bootstrapped with founder's capital ($0 external funding to date)
+**Funding:** Bootstrapped with founder's capital — $875K-$1.7M equivalent value built with $0 external funding.
+**Path to FDA:** $1.1-1.5M total investment over 2 years.
 
 ---
 

@@ -207,15 +207,16 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph Built["What's Been Built"]
-        B1["17 Microservices<br/>$200K-400K value"]
+    subgraph Built["What's Been Built (65K+ Lines)"]
+        B1["15 Microservices<br/>$200K-400K value"]
         B2["Multi-Agent AI<br/>$150K-300K value"]
         B3["Crisis Detection<br/>$100K-200K value"]
         B4["RAG + Voice<br/>$100K-200K value"]
         B5["HIPAA + Dashboards<br/>$175K-350K value"]
+        B6["9 Complete Modules<br/>$100K-150K value"]
     end
 
-    V["💰 Total Value<br/>$775K - $1.55M"]
+    V["💰 Total Value<br/>$875K - $1.7M"]
 
     subgraph Efficiency["What This Proves"]
         E1["✅ Production-ready"]
@@ -359,7 +360,7 @@ flowchart TB
     subgraph AI["AI Layer - Proprietary"]
         crisis["Crisis Detection<br/>871 scenarios, 100% recall"]
         agents["Multi-Agent System<br/>7 evidence-based agents"]
-        rag["RAG Pipeline<br/>6 streams, 45ms"]
+        rag["RAG Pipeline<br/>5 streams, 45ms"]
         voice["Voice Pipeline<br/>Whisper + Piper"]
     end
 
@@ -427,39 +428,45 @@ flowchart TD
     style I5 fill:#51cf66,color:#fff
 ```
 
-### Planned Certifications
-- SOC 2 Type II (Q2 2026)
-- HITRUST (Q4 2026)
-- FDA Class II Medical Device (2027)
+### Planned Certifications (Accelerated Timeline)
+- ISO 13485 Gap Analysis (Feb 2026)
+- FDA Pre-Submission (Jun 2026)
+- FDA De Novo Submission (Oct 2026)
+- SOC 2 Type II (Q4 2026)
+- **FDA Clearance (Target Jun 2027)**
+- HITRUST (Q4 2027)
 
 ---
 
 ## 🚀 Strategic Roadmap
 
-### 3-5 Year Window of Maximum Opportunity (2025-2028)
+### Accelerated 2-Year Path to FDA Clearance (Dec 2025 - Dec 2027)
+
+> **Key Finding:** 9 major modules (3,000+ lines) discovered complete but not integrated. Engineering focus shifts from implementation to integration, compressing timeline by 40%.
 
 ```mermaid
 flowchart TD
-    subgraph Window["Market Timing 2025-2028"]
-        W1["📈 Demographic Urgency"]
-        W2["📋 Regulatory Tailwind"]
-        W3["🔧 Technology Maturity"]
-        W4["🎯 Competitive Gap"]
+    subgraph Window["Market Timing 2025-2027"]
+        W1["📈 Demographic Urgency<br/>Boomers hitting 80+"]
+        W2["📋 Regulatory Tailwind<br/>CMS RPM expansion"]
+        W3["🔧 Technology Maturity<br/>Edge AI ready"]
+        W4["🎯 Competitive Gap<br/>No integrated solution"]
     end
 
-    subgraph Phases["5-Phase Roadmap"]
-        P1["Phase 1: Validation<br/>Current → Q2 2026"]
-        P2["Phase 2: RPM<br/>Q2-Q4 2026"]
-        P3["Phase 3: Smart Home<br/>Q1-Q3 2027"]
-        P4["Phase 4: Robotics<br/>Q3 2027 → 2028"]
+    subgraph Phases["Accelerated Roadmap"]
+        P1["Tactical: Integration<br/>Dec 2025 - Feb 2026"]
+        P2["Phase 1: Validation<br/>Apr - Jul 2026"]
+        P3["Phase 2: FDA Submission<br/>Aug - Dec 2026"]
+        P4["Phase 3: Clearance<br/>Jan - Dec 2027"]
     end
 
     Window -->|"Enables"| Phases
-    P1 -->|"Leads to"| P2
-    P2 -->|"Leads to"| P3
-    P3 -->|"Leads to"| P4
+    P1 -->|"Wires 9 modules"| P2
+    P2 -->|"Pilot n=20"| P3
+    P3 -->|"FDA De Novo"| P4
 
-    style W4 fill:#51cf66,color:#fff
+    style P1 fill:#51cf66,color:#fff
+    style W4 fill:#228be6,color:#fff
 ```
 
 ---
@@ -468,12 +475,14 @@ flowchart TD
 
 | Milestone | Status | Timeline |
 |-----------|--------|----------|
-| Platform development (17 microservices) | ✅ Complete | Done |
+| Platform development (15 microservices, 65K+ lines) | ✅ Complete | Done |
 | HIPAA compliance (§164.312) | ✅ Complete | Done |
-| IRB approval for clinical study | 🔄 In Progress | Q1 2026 |
-| Pilot with 2-3 assisted living facilities | 🔄 Planning | Q1-Q2 2026 |
-| Retrospective data analysis publication | 📋 Planned | Q2 2026 |
-| First enterprise customers | 📋 Planned | Q2 2026 |
+| 9 additional modules complete (XAI, streaming, emotion) | ✅ Complete | Dec 2025 |
+| Module integration (wiring to production) | 🔄 In Progress | Dec 2025 - Jan 2026 |
+| Edge prototype demonstration | 🔄 In Progress | Feb 2026 |
+| IRB approval for clinical study | 🔄 In Progress | Feb 2026 |
+| Pilot study (n=20) | 📋 Planned | Apr 2026 |
+| First enterprise contracts (3 facilities) | 📋 Planned | Jul 2026 |
 
 ---
 
@@ -531,74 +540,99 @@ flowchart TD
 
 ---
 
-### Phase 5: ML-Powered Adaptive Intelligence (v5.0) — Ongoing
+### Continuous: ML-Powered Adaptive Intelligence
 
 ```mermaid
 flowchart TD
-    C1["Current: BGE 78%"]
-    C2["Current: Rule-based"]
-    C3["Current: Manual MLOps"]
+    C1["Current: BGE 92-95%"]
+    C2["Current: Semantic matching"]
+    C3["Current: 214 prototypes"]
 
-    T1["Target: ML 95%+"]
+    T1["Target: Fine-tuned 97%+"]
     T2["Target: Contextual Bandits"]
-    T3["Target: Auto-retrain"]
+    T3["Target: Active Learning"]
 
-    I1["📈 +15% Outcomes"]
-    I2["🔄 Continuous Learning"]
+    I1["📈 +5% Therapeutic Outcomes"]
+    I2["🔄 Continuous Improvement"]
 
-    C1 -->|"Evolves to"| T1
+    C1 -->|"Fine-tune to"| T1
     C2 -->|"Evolves to"| T2
-    C3 -->|"Evolves to"| T3
+    C3 -->|"Auto-expands via"| T3
     T1 -->|"Delivers"| I1
     T2 -->|"Delivers"| I1
     T3 -->|"Enables"| I2
 
-    style T1 fill:#51cf66,color:#fff
-    style T2 fill:#51cf66,color:#fff
-    style T3 fill:#51cf66,color:#fff
+    style C1 fill:#51cf66,color:#fff
+    style T1 fill:#228be6,color:#fff
+    style T2 fill:#228be6,color:#fff
 ```
 
 ---
+
+### Revenue Projections (Milestone-Based)
+
+| Milestone | Date | Facilities | Residents | ARR |
+|-----------|------|------------|-----------|-----|
+| Tactical Complete | Feb 2026 | 1 (pilot) | 50 | $0 |
+| Phase 1 End | Jul 2026 | 3 | 200 | $30K |
+| Phase 2 End | Dec 2026 | 10 | 700 | $200K |
+| FDA Clearance | Jun 2027 | 15 | 1,000 | $500K |
+| Phase 3 End | Dec 2027 | 30 | 2,000 | **$1M** |
+| Post-2027 | 2028 | 100+ | 7,000+ | **$5M+** |
 
 ### Expanded Revenue Streams (2027+)
 
 | Revenue Stream | Per Unit | Source |
 |----------------|----------|--------|
-| **Platform Subscriptions** | $8-15/resident/month | Senior living facilities |
+| **Platform Subscriptions** | $50-75/resident/month | Senior living facilities |
 | **Medicare RPM Billing** | $1,560/patient/year | Healthcare providers |
 | **Device Integration Fees** | $50-200K/integration | Medical device OEMs |
 | **Robot Fleet Management** | $5-15K/facility/year | Multi-facility operators |
 | **Family Portal Premium** | $50-100/month | Family members |
 
-**Combined Revenue Potential (2028):** $10-50M ARR with full platform deployment
+**Unit Economics (Target Dec 2027):** 65-75% gross margin, 4-5x LTV:CAC
 
 ---
 
 ## 💰 Investment Opportunity
 
-### Use of Funds (Seed/Pre-A)
+### Recalibrated Investment (Dec 2025)
+
+> **Savings:** ~$800K vs original estimates due to 9 complete implementations + demonstrated velocity (65K lines in 4 months)
+
+| Phase | Timeline | Investment | Cumulative |
+|-------|----------|------------|------------|
+| Tactical | Dec 2025 - Feb 2026 | $80-113K | $80-113K |
+| Strategic Phase 1 | Apr - Jul 2026 | $200-280K | $280-393K |
+| Strategic Phase 2 | Aug - Dec 2026 | $300-400K | $580-793K |
+| Strategic Phase 3 | Jan - Dec 2027 | $500-700K | **$1.1-1.5M** |
+
+### Use of Funds Allocation
 
 ```mermaid
 pie title Use of Funds Allocation
-    "Clinical Validation" : 40
-    "Engineering" : 30
-    "Sales & Marketing" : 20
-    "Operations" : 10
+    "Clinical Validation" : 35
+    "Engineering (Integration)" : 25
+    "FDA Regulatory" : 20
+    "Sales & Marketing" : 15
+    "Operations" : 5
 ```
 
 | Allocation | Percentage | Purpose |
 |------------|------------|---------|
-| **Clinical Validation** | 40% | IRB study, data collection, publication |
-| **Engineering** | 30% | EHR integration, mobile apps, scale |
-| **Sales & Marketing** | 20% | Pilot programs, conference presence |
-| **Operations** | 10% | Legal, compliance, administration |
+| **Clinical Validation** | 35% | Pilot (n=20), prospective (n=100), RCT prep |
+| **Engineering** | 25% | Module integration, edge deployment, EHR |
+| **FDA Regulatory** | 20% | Pre-submission, De Novo, consultants |
+| **Sales & Marketing** | 15% | Enterprise sales, 3→30 facilities |
+| **Operations** | 5% | Legal, compliance, administration |
 
 ### Key Milestones
 
-1. **Clinical publication** demonstrating efficacy
-2. **3-5 paying pilot customers** with outcome data
-3. **$500K ARR** or clear path to it
-4. **Regulatory pathway** defined (FDA, CE Mark)
+1. **Feb 2026**: 9 modules integrated, edge prototype demonstrated
+2. **Apr 2026**: Pilot study (n=20) complete with positive results
+3. **Oct 2026**: FDA De Novo submission accepted
+4. **Jun 2027**: FDA clearance obtained
+5. **Dec 2027**: 30 facilities, $1M ARR
 
 ---
 
@@ -608,9 +642,10 @@ pie title Use of Funds Allocation
 
 **Aejaz Sheriff** — Founder & Technical Lead
 - Full-stack AI/ML engineer with healthcare focus
-- **Built complete platform with founder's capital**: 17 microservices, multi-agent AI
+- **Built complete platform with founder's capital**: 15 microservices (65K+ lines) in 4 months
+- **Velocity demonstrated**: 9 additional modules complete, integration-focused execution
 - Background in enterprise software development
-- Demonstrated: Technical depth, capital efficiency, execution capability
+- Proven: Technical depth, capital efficiency, exceptional execution speed
 
 ### Advisors Needed
 - Clinical psychiatrist/psychologist (elderly care)

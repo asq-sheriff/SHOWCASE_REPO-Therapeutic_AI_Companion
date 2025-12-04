@@ -18,10 +18,11 @@
 
 | Value Proposition | Details |
 |-------------------|---------|
-| **Production-Ready Platform** | 17 microservices, HIPAA compliant, deployed and tested |
-| **Proven Technology** | 100% crisis detection recall, <1s response time |
+| **Production-Ready Platform** | 15 microservices (65K+ lines), HIPAA compliant, deployed and tested |
+| **Proven Technology** | 100% crisis detection recall, <1s response time, 92-95% intent accuracy |
 | **Growing Market** | $3T+ TAM, 24% CAGR in AI mental health |
 | **First-Mover Advantage** | No integrated competitor in elderly therapeutic AI |
+| **Accelerated Timeline** | 9 additional modules complete, FDA clearance path by Jun 2027 |
 | **Flexible Integration** | API-first, on-premise or cloud, modular architecture |
 
 ---
@@ -284,6 +285,13 @@ flowchart LR
 - Access to research cohorts
 - Publication co-authorship opportunities
 
+**Timeline:**
+- **Feb 2026**: IRB submission for pilot study (n=20)
+- **Apr 2026**: Pilot study completion
+- **Aug 2026**: Prospective study launch (n=100)
+- **Jan 2027**: Prospective study completion
+- **2027+**: RCT (n=200) post-FDA clearance
+
 ---
 
 ### 7. Investment & Strategic Partners
@@ -298,17 +306,19 @@ flowchart LR
 
 | Value | Details |
 |-------|---------|
-| **Proven Technology** | Production-ready, 17 services, 100% crisis recall |
-| **Capital Efficiency** | $775K-1.55M equivalent built with founder capital |
+| **Proven Technology** | Production-ready, 15 services (65K+ lines), 100% crisis recall |
+| **Capital Efficiency** | $875K-1.7M equivalent built with founder capital |
+| **Complete Modules** | 9 additional modules (3,000+ lines) ready for integration |
 | **Clear Market** | $3T+ TAM, 1.2M immediate US residents |
-| **Regulatory Path** | HIPAA complete, FDA pathway defined |
-| **Execution Proven** | Solo founder built complete platform |
+| **Regulatory Path** | HIPAA complete, FDA De Novo submission Oct 2026, clearance Jun 2027 |
+| **Execution Proven** | Solo founder built complete platform in 4 months |
 
-**Investment Use:**
-- Clinical validation studies (40%)
-- Engineering expansion (30%)
-- Sales & marketing (20%)
-- Operations (10%)
+**Investment Use (Total $1.1-1.5M over 2 years):**
+- Clinical validation studies (35%)
+- FDA regulatory pathway (20%)
+- Engineering/integration (25%)
+- Sales & marketing (15%)
+- Operations (5%)
 
 ---
 
@@ -336,6 +346,17 @@ flowchart LR
 | **Pilot Setup** | 2-4 weeks | Integration, training |
 | **Pilot Run** | 3-6 months | Monitored deployment |
 | **Scale** | Ongoing | Full deployment |
+
+### Key Partnership Milestones (Accelerated)
+
+| Date | Milestone | Partnership Opportunity |
+|------|-----------|------------------------|
+| **Feb 2026** | 9 modules integrated, edge prototype | Early adopter facilities |
+| **Apr 2026** | Pilot study (n=20) complete | Clinical research partners |
+| **Jul 2026** | First 3 enterprise contracts | Senior living operators |
+| **Oct 2026** | FDA De Novo submission | Strategic/regulatory partners |
+| **Jun 2027** | FDA clearance (target) | Scale deployment partners |
+| **Dec 2027** | 30 facilities, $1M ARR | Growth investors |
 
 ---
 

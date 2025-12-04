@@ -9,8 +9,8 @@
 ---
 
 ![Built By](https://img.shields.io/badge/Built_By-Solo_Engineer-blue?style=flat-square)
-![Lines of Code](https://img.shields.io/badge/Codebase-50K+_Lines-green?style=flat-square)
-![Services](https://img.shields.io/badge/Microservices-17-orange?style=flat-square)
+![Lines of Code](https://img.shields.io/badge/Codebase-65K+_Lines-green?style=flat-square)
+![Services](https://img.shields.io/badge/Microservices-15-orange?style=flat-square)
 ![Production Ready](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=flat-square)
 
 </div>
@@ -24,7 +24,7 @@ This isn't just a portfolio project — it's a **production-grade healthcare AI 
 | Skill Category | What I Built | Complexity Level |
 |----------------|--------------|------------------|
 | **AI/ML Engineering** | Multi-agent orchestration, RAG pipeline, crisis detection ML, intent classification | Advanced |
-| **Backend Development** | 17 microservices in Go + Python, distributed architecture | Advanced |
+| **Backend Development** | 15 microservices (14 Docker + 1 Host) in Go + Python, distributed architecture | Advanced |
 | **System Design** | Event-driven architecture, circuit breakers, service mesh | Senior |
 | **Infrastructure** | Docker orchestration, GPU optimization, HIPAA compliance | Senior |
 | **Data Engineering** | PostgreSQL + pgvector, Redis caching, real-time streaming | Intermediate-Advanced |
@@ -181,7 +181,32 @@ class EscalationAction(Enum):
 
 ---
 
-### 3. RAG Pipeline with 6 Parallel Retrieval Streams
+### 2.5 Additional Safety & ML Modules (Complete)
+
+Beyond the core crisis detection, these production-ready modules enhance safety and therapeutic quality:
+
+| Module | Lines | Purpose | Status |
+|--------|-------|---------|--------|
+| **Coreference Resolver** | 455 | Pronoun-to-entity linking ("his birthday" → Robert) | Complete |
+| **Ensemble Classifier** | 538 | Binary classification + adversarial detection | Complete |
+| **Crisis Explainer (XAI)** | 498 | Explainable AI with clinician reports | Complete |
+| **Streaming STT** | 664 | VAD + WebSocket sessions for elderly speech | Complete |
+| **Emotion Detector** | 667 | Acoustic + wav2vec2 ensemble (VAD output) | Complete |
+| **Memory Consolidation** | 60KB | Cross-session semantic clustering | Complete |
+| **Holistic Evaluator** | 25KB | WAI-AI adapted therapeutic metrics | Complete |
+| **Internal Reflection** | 25KB | Self-critique + therapeutic constitution | Complete |
+| **Situational Awareness** | 48KB | Context service + proactive triggers | Complete |
+
+**Skills Demonstrated:**
+- Explainable AI (XAI) for clinical transparency
+- Voice emotion detection with acoustic analysis
+- Self-critique/Constitutional AI patterns
+- Semantic memory consolidation
+- Real-time speech processing with VAD
+
+---
+
+### 3. RAG Pipeline with 5 Parallel Retrieval Streams
 
 **Problem Solved:** How do you retrieve relevant context from multiple knowledge sources in <50ms to generate personalized therapeutic responses?
 
@@ -193,17 +218,16 @@ flowchart TD
 
     B["BGE Embedding<br/>768-dim vector"]
 
-    C1["📚 Knowledge Base"]
-    C2["👤 Life Story"]
-    C3["💬 Chat History"]
-    C4["📊 Assessments"]
-    C5["📅 Schedule"]
-    C6["🧠 Semantic Memory"]
+    C1["📚 Knowledge Base<br/>(max 8 results)"]
+    C2["👤 Life Story<br/>(max 5 results)"]
+    C3["💬 Chat History<br/>(last 12 turns, max 8)"]
+    C4["📊 Assessments<br/>(PHQ-9, GAD-7, UCLA-3)"]
+    C5["📅 Schedule<br/>(max 5 results)"]
 
     D1["BM25 Scoring"]
     D2["Semantic Scoring"]
 
-    E["RRF Fusion"]
+    E["RRF Fusion (k=60)"]
 
     F["📤 Personalized RAG Context"]
 
@@ -213,19 +237,16 @@ flowchart TD
     B -->|"2c. Query history"| C3
     B -->|"2d. Query assessments"| C4
     B -->|"2e. Query schedule"| C5
-    B -->|"2f. Query memory"| C6
     C1 -->|"3a. Keyword score"| D1
     C2 -->|"3a. Keyword score"| D1
     C3 -->|"3a. Keyword score"| D1
     C4 -->|"3a. Keyword score"| D1
     C5 -->|"3a. Keyword score"| D1
-    C6 -->|"3a. Keyword score"| D1
     C1 -->|"3b. Vector score"| D2
     C2 -->|"3b. Vector score"| D2
     C3 -->|"3b. Vector score"| D2
     C4 -->|"3b. Vector score"| D2
     C5 -->|"3b. Vector score"| D2
-    C6 -->|"3b. Vector score"| D2
     D1 -->|"4. Combine & rank"| E
     D2 -->|"4. Combine & rank"| E
     E -->|"5. Output context"| F
@@ -236,7 +257,7 @@ flowchart TD
 ```
 
 **Technical Implementation:**
-- **Parallel Retrieval**: 6 async streams, combined in 45ms
+- **Parallel Retrieval**: 5 async streams, combined in 45ms
 - **Hybrid Search**: BM25 (keyword) + Semantic (embedding) + RRF fusion
 - **Vector Database**: PostgreSQL + pgvector (768/1024-dim)
 - **Caching**: Redis with 60-80% hit rate, <5ms latency
@@ -269,7 +290,7 @@ flowchart TD
     B3 -->|"Hit"| B4["Use Cached<br/>Embedding"]
     B3 -->|"Miss"| B5["Generate BGE<br/>Embedding"]
 
-    B4 --> C["FAISS ANN Search<br/>303 prototypes<br/>5-10ms"]
+    B4 --> C["BGE Semantic Search<br/>214 prototypes<br/>5-10ms"]
     B5 --> C
 
     C --> D{"Confidence<br/>> 0.45?"}
@@ -298,7 +319,7 @@ flowchart TD
 | **3. Embedding Cache** | Redis | 70%+ | 2-5ms | Pre-computed BGE vectors |
 | **4. FAISS Index** | In-memory | 100% | 5-10ms | Approximate nearest neighbor search |
 
-#### 10 Therapeutic Intent Categories (303 Prototypes)
+#### 10 Therapeutic Intent Categories (214 Prototypes)
 
 | Intent | Examples | Description |
 |--------|----------|-------------|
@@ -330,7 +351,7 @@ flowchart TD
 
 ## 🔧 Backend Engineering
 
-### 5. Microservices Architecture (17 Services)
+### 5. Microservices Architecture (15 Services)
 
 **Problem Solved:** How do you build a scalable, maintainable healthcare platform with multiple specialized services?
 
@@ -383,8 +404,8 @@ flowchart TB
 **Technical Decisions:**
 - **Go** for high-performance services (WebSocket, Auth, Gateway)
 - **Python** for AI/ML services (Router, Embedding, Voice)
-- **Docker Compose** for orchestration (14 containers)
-- **Host services** for GPU-accelerated inference
+- **Docker Compose** for orchestration (14 Docker services)
+- **Host services** for GPU-accelerated inference (1 service: Generation on M1 Metal)
 
 **Skills Demonstrated:**
 - Microservices architecture design
@@ -530,15 +551,15 @@ flowchart TD
     end
 
     subgraph Results["Results"]
-        P1["300-400ms latency"]
-        P2["45-60 tokens/sec"]
+        P1["~7.6s generation<br/>(2 concurrent)"]
+        P2["Streaming enabled"]
         P3["~6GB memory"]
     end
 
     subgraph Improvement["Improvement"]
         I1["Before: 51s"]
-        I2["After: 6-8s"]
-        I3["🚀 6-8x faster"]
+        I2["After: ~7.6s"]
+        I3["🚀 6-7x faster"]
     end
 
     Model -->|"Loaded into"| Runtime
@@ -754,9 +775,9 @@ flowchart TD
 | Metric | Achieved | Context |
 |--------|----------|---------|
 | **Crisis Detection** | 100% recall, <1s | Zero false negatives in safety-critical system |
-| **Response Latency** | 400-500ms E2E | Full therapeutic response with RAG |
+| **Response Latency** | ~8s (streaming starts ~500ms) | Full therapeutic response with RAG |
 | **Cache Hit Rate** | 60-80% | Conversation and embedding caches |
-| **LLM Optimization** | 6-8x speedup | 51s → 6-8s response time |
+| **LLM Optimization** | 6-7x speedup | 51s → ~7.6s response time |
 | **Concurrent Users** | 1000+ | WebSocket connections |
 | **Uptime Target** | 99.9% | Healthcare-grade reliability |
 
@@ -790,9 +811,9 @@ Step 5: Clinical Context Fetch ──────────── 10-30ms (par
 Step 6: Build Prompt ────────────────────── 5-15ms
         └─ Template filling + context assembly
 
-Step 7: LLM Generation ──────────────────── 300-500ms
-        ├─ Prefill (first token): 50-100ms
-        └─ Token streaming: 250-300 tokens @ 42-85ms/token
+Step 7: LLM Generation ──────────────────── ~7.6s (M1 Metal, 2 concurrent)
+        ├─ Prefill (first token): ~500ms
+        └─ Streaming response enabled
 
 Step 8: Save & Return ───────────────────── 10-20ms
         └─ Database write + response formatting
@@ -806,8 +827,8 @@ Step 8: Save & Return ───────────────────�
 | **Intent Classification** | 10-15ms | 50ms | 30-40ms savings (70% hit) |
 | **Crisis Detection** | 20-30ms | 50ms | N/A (always runs) |
 | **RAG Retrieval** | 30-45ms | 55ms | 30-40ms savings |
-| **LLM Generation** | 300-400ms | 600ms | N/A |
-| **End-to-End** | ~200ms | ~400ms | 60-80% reduction |
+| **LLM Generation** | ~7.6s | ~10s | Streaming enabled |
+| **End-to-End** | ~8s | ~10s | Streaming starts ~500ms |
 
 ---
 

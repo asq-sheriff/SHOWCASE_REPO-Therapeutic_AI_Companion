@@ -29,7 +29,7 @@
 [![Redis](https://img.shields.io/badge/Redis-7-DC382D?style=flat-square&logo=redis&logoColor=white)](https://redis.io)
 [![Langfuse](https://img.shields.io/badge/Langfuse-Observability-5046E5?style=flat-square)](https://langfuse.com)
 
-### A complete AI system I designed and built from scratch — 17 microservices, 7 therapeutic agents, 100% crisis detection recall
+### A complete AI system I designed and built from scratch — 65K+ lines, 15 microservices, 7 therapeutic agents, 100% crisis detection recall
 
 <br/>
 
@@ -62,19 +62,19 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 <sub>Zero false negatives on 871 test scenarios</sub>
 </td>
 <td align="center" width="20%">
-<h1>~200ms</h1>
-<b>P50 Latency</b><br/>
-<sub>Full request-to-response (P95: ~450ms)</sub>
+<h1>92-95%</h1>
+<b>Intent Accuracy</b><br/>
+<sub>214 prototypes, BGE semantic matching</sub>
 </td>
 <td align="center" width="20%">
-<h1>17</h1>
-<b>Microservices</b><br/>
-<sub>Go + Python distributed architecture</sub>
+<h1>65K+</h1>
+<b>Lines of Code</b><br/>
+<sub>15 microservices built in 4 months</sub>
 </td>
 <td align="center" width="20%">
-<h1>303</h1>
-<b>Intent Prototypes</b><br/>
-<sub>10 therapeutic categories via FAISS ANN</sub>
+<h1>9</h1>
+<b>Complete Modules</b><br/>
+<sub>XAI, streaming, emotion detection</sub>
 </td>
 <td align="center" width="20%">
 <h1>7</h1>
@@ -104,22 +104,24 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 <td width="50%" valign="top">
 
 ### AI/ML Engineering
-- **Multi-agent orchestration** — 303 intent prototypes across 10 therapeutic categories
-- **RAG pipeline** — 6 parallel retrieval streams with asyncio.gather() (~2x speedup)
-- **4-layer caching** — Bloom Filter → Classification → Embedding → FAISS (60-70% hit rate)
-- **Custom crisis detection** — BGE embeddings + 5-message trajectory analysis
-- **LLM inference** — Qwen 2.5-7B on Apple Silicon (Metal GPU, 45-50 tok/s)
-- **Voice pipeline** — Whisper STT + Piper TTS
+- **Multi-agent orchestration** — 214 intent prototypes across 10 therapeutic categories (92-95% accuracy)
+- **RAG pipeline** — 5 parallel retrieval streams with asyncio.gather() (~2x speedup)
+- **Intelligent caching** — Classification + Embedding + Conversation caching (60-80% hit rate)
+- **Custom crisis detection** — BGE embeddings + 5-message trajectory analysis (100% recall)
+- **LLM inference** — Qwen 2.5-7B on Apple Silicon (Metal GPU, streaming enabled)
+- **Voice pipeline** — Whisper STT + Piper TTS + Emotion detection
+- **9 complete modules** — Coreference, XAI, streaming STT, memory consolidation
 
 </td>
 <td width="50%" valign="top">
 
 ### Backend & Infrastructure
-- **17 microservices** — Go (Gin) + Python (FastAPI)
+- **15 microservices** — Go (Gin) + Python (FastAPI), 14 Docker + 1 Host
 - **Real-time communication** — WebSocket + Redis Pub/Sub
-- **Vector search** — PostgreSQL + pgvector
-- **Containerized deployment** — Docker orchestration
+- **Vector search** — PostgreSQL + pgvector (768-dim BGE embeddings)
+- **Containerized deployment** — Docker orchestration + edge prototype
 - **HIPAA compliance** — Full §164.312 technical safeguards
+- **FDA pathway** — De Novo submission Oct 2026, clearance target Jun 2027
 
 </td>
 </tr>
@@ -134,22 +136,29 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 | **Total Addressable Market** | $3T+ (Elderly Care + Mental Health) |
 | **Target Market** | 30,600 US Assisted Living Facilities |
 | **Revenue Potential** | $720M-2.16B ARR at scale |
-| **Unit Economics** | $50-150/resident/month |
+| **Unit Economics** | $50-75/resident/month |
 | **Facility ROI** | $50K-150K annual savings per 100 beds |
+| **Path to $1M ARR** | 30 facilities by Dec 2027 |
 
 [Full Market Analysis](docs/INVESTOR_OVERVIEW.md) | [Partnership Models](docs/PARTNERSHIP_OPPORTUNITIES.md)
 
 ---
 
-## Development Stage
+## Development Stage (Accelerated Timeline)
 
-| Milestone | Status |
-|-----------|--------|
-| Platform Architecture (17 services) | Complete |
-| HIPAA Compliance (§164.312) | Complete |
-| Crisis Detection (100% recall) | Validated |
-| Clinical Pilot Planning | In Progress |
-| First Enterprise Customers | Q2 2026 |
+| Milestone | Status | Date |
+|-----------|--------|------|
+| Platform Architecture (15 services, 65K+ lines) | ✅ Complete | Done |
+| HIPAA Compliance (§164.312) | ✅ Complete | Done |
+| Crisis Detection (100% recall) | ✅ Validated | Done |
+| 9 Additional Modules (XAI, streaming, emotion) | ✅ Complete | Dec 2025 |
+| Module Integration & Edge Prototype | 🔄 In Progress | Feb 2026 |
+| Pilot Study (n=20) | 📋 Planned | Apr 2026 |
+| First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
+| FDA De Novo Submission | 📋 Planned | Oct 2026 |
+| FDA Clearance (target) | 📋 Planned | Jun 2027 |
+
+**Built with founder's capital** — $875K-$1.7M equivalent value, $0 external funding
 
 ---
 
@@ -243,7 +252,7 @@ flowchart TB
 
 <img src="assets/architecture.png" alt="Detailed Platform Architecture" width="100%"/>
 
-*Complete 12-layer architecture showing all 17 microservices, data flows, and integration points*
+*Complete 12-layer architecture showing all 15 microservices (14 Docker + 1 Host), data flows, and integration points*
 
 </details>
 
@@ -291,11 +300,11 @@ flowchart TB
 
 | Category | Technologies | Evidence |
 |----------|--------------|----------|
-| **AI/ML** | PyTorch, Transformers, RAG, FAISS, Embeddings | [Crisis Detection](docs/TECHNICAL_PORTFOLIO.md#crisis-detection-system) |
+| **AI/ML** | PyTorch, Transformers, RAG, BGE Embeddings, XAI | [Crisis Detection](docs/TECHNICAL_PORTFOLIO.md#crisis-detection-system) |
 | **Backend** | Python (FastAPI), Go (Gin), WebSockets | [Code Samples](docs/CODE_SAMPLES.md) |
-| **Data** | PostgreSQL, pgvector, Redis, Vector Search | [Process Flow](docs/PROCESS_FLOW.md) |
-| **Infrastructure** | Docker, Microservices, HIPAA Compliance | [Architecture](#architecture) |
-| **LLM Engineering** | Prompt Engineering, Context Management, Caching | [Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) |
+| **Data** | PostgreSQL, pgvector (768-dim), Redis, Vector Search | [Process Flow](docs/PROCESS_FLOW.md) |
+| **Infrastructure** | Docker (14 services), Edge Deployment, HIPAA Compliance | [Architecture](#architecture) |
+| **LLM Engineering** | Qwen 2.5-7B, Streaming, Context Management, Caching | [Technical Portfolio](docs/TECHNICAL_PORTFOLIO.md) |
 
 ---
 
@@ -305,20 +314,19 @@ The safety-first architecture processes every message through the crisis detecti
 
 | Detection Layer | Method | Performance |
 |-----------------|--------|-------------|
-| **Semantic Matching** | BGE embeddings against 871 crisis patterns | <50ms |
-| **Clinical Context** | PHQ-9, GAD-7, life story risk factors | Integrated |
+| **Semantic Matching** | BGE embeddings against 871 crisis patterns (214 crisis + 657 non-crisis) | <50ms |
+| **Clinical Context** | PHQ-9, GAD-7, UCLA-3, life story risk factors | Integrated |
 | **Trajectory Analysis** | 5-message sliding window for deterioration | Real-time |
-| **5-Level C-SSRS Stratification** | CRITICAL → HIGH → MODERATE → MILD → NONE | <1s total |
+| **4-Level Stratification** | IMMEDIATE → URGENT → ELEVATED → MODERATE | <1s total |
 
 ### Risk-Level Response Times (Joint Commission Compliant)
 
-| Risk Level | Confidence | Response Time | Actions |
-|------------|------------|---------------|---------|
-| 🔴 **CRITICAL** | ≥0.90 | **<10s target** | Emergency protocol, 911 if needed |
-| 🟠 **HIGH** | 0.75-0.90 | **<30s (regulatory)** | Immediate staff alert, C-SSRS assessment |
-| 🟡 **MODERATE** | 0.60-0.75 | <10s priority | Care team notification, crisis mode |
-| 🟢 **MILD** | 0.40-0.60 | Normal | Flag for 24hr review, schedule follow-up |
-| ⚪ **NONE** | <0.40 | Normal | Document only |
+| Risk Level | Response Time | Actions |
+|------------|---------------|---------|
+| 🔴 **IMMEDIATE** | **<30s (regulatory)** | Auto-escalate 911, emergency protocol |
+| 🟠 **URGENT** | **<5 minutes** | Physician + nurse notification, C-SSRS assessment |
+| 🟡 **ELEVATED** | **<1 hour** | Physician + social worker, enhanced monitoring |
+| 🟢 **MODERATE** | **<24 hours** | Routine monitoring, schedule follow-up |
 
 **Result:** 100% recall (zero missed crises), <5% false positive rate
 

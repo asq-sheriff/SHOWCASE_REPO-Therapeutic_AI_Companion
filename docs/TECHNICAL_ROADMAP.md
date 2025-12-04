@@ -8,9 +8,9 @@
 
 ---
 
-![Version](https://img.shields.io/badge/Roadmap-v5.0-blue?style=flat-square)
-![Timeline](https://img.shields.io/badge/Timeline-2025--2028-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen?style=flat-square)
+![Version](https://img.shields.io/badge/Roadmap-v6.0-blue?style=flat-square)
+![Timeline](https://img.shields.io/badge/Timeline-Dec_2025--Dec_2027-orange?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Accelerated-brightgreen?style=flat-square)
 
 </div>
 
@@ -32,7 +32,7 @@ flowchart TD
         C1["Multi-Agent AI<br/>7 therapeutic agents"]
         C2["Crisis Detection<br/>100% recall, <1s"]
         C3["Voice Pipeline<br/>Whisper + Piper"]
-        C4["RAG System<br/>6 parallel streams"]
+        C4["RAG System<br/>5 parallel streams"]
     end
 
     subgraph Phase1["Phase 1: Safety Infrastructure"]
@@ -63,24 +63,56 @@ flowchart TD
 
 ---
 
-## 📅 Timeline Overview
+## 📅 Timeline Overview (Accelerated)
+
+> **Major Update (Dec 2025):** Timeline compressed 40% based on discovery that 9 major components (3,000+ lines) are COMPLETE but not integrated. Engineering focus shifts from implementation to integration.
 
 | Phase | Timeline | Investment | Priority | Key Deliverables |
 |-------|----------|------------|----------|------------------|
-| **Phase 0** | Complete | $80-110K | ✅ Done | Configuration foundation, YAML migration |
-| **Phase 1** | Months 1-6 | $365-415K | Critical | Safety architecture, device abstraction |
-| **Phase 2** | Months 4-9 | $205-310K | High | ML intelligence, EHR integration |
-| **Phase 3** | Months 7-12 | $250K | Critical | Edge-cloud, event processing, compliance |
-| **Phase 4** | Months 13-18 | $515-630K | Medium | RPM, smart home, clinical validation |
-| **Phase 5** | Months 19-24 | $200-300K | Low | Mobile apps, robotics, advanced features |
+| **Tactical** | Dec 2025 - Feb 2026 | $80-113K | ✅ In Progress | Wire 9 complete implementations, edge prototype, pilot IRB |
+| **Strategic Phase 1** | Apr - Jul 2026 | $200-280K | Critical | Pilot complete, edge production (3 facilities), FDA pre-sub |
+| **Strategic Phase 2** | Aug - Dec 2026 | $300-400K | Critical | FDA De Novo submission, 10 facilities, prospective study |
+| **Strategic Phase 3** | Jan - Dec 2027 | $500-700K | High | FDA clearance, 30 facilities, RCT launch, $1M ARR |
+| **Post-2027** | 2028+ | TBD | Medium | RCT complete, Medicare, 100+ facilities, international |
 
-**Total Investment**: $2.0M - $2.5M over 24 months
+**Total Investment**: $0.9M - $1.3M over 2 years (reduced from $2.0-2.5M due to velocity + complete implementations)
+
+---
+
+## 🚀 Tactical Phase: Integration Sprint (Dec 2025 - Feb 2026)
+
+**Timeline**: 2.5-3 months | **Investment**: $80-113K | **Priority**: ✅ IN PROGRESS
+
+### Complete Implementations Discovered (Ready to Wire)
+
+| Component | Lines | Current Status | Integration Target |
+|-----------|-------|----------------|-------------------|
+| **Coreference Resolver** | 455 | ✅ Complete | context_builder.py |
+| **Ensemble Classifier** | 538 | ✅ Complete | safety_service.py |
+| **Crisis Explainer (XAI)** | 498 | ✅ Complete | Care Manager dashboard |
+| **Streaming STT** | 664 | ✅ Complete | Voice WebSocket endpoint |
+| **Emotion Detector** | 667 | ✅ Complete | AffectState in base.py |
+| **Internal Reflection** | 25KB | ✅ Complete | generation_client.py |
+| **Holistic Evaluator** | 25KB | ✅ Complete | Response pipeline |
+| **Memory Consolidation** | 60KB | ✅ Complete | Enable in production |
+| **Situational Awareness** | 48KB | ✅ Complete | Enable proactive triggers |
+
+**Impact:** Engineering focus shifts from implementation to integration (2-3h per task)
+
+### Tactical Phase Deliverables
+
+| Week | Focus | Deliverable |
+|------|-------|-------------|
+| Days 1-2 | Integration | Wire all 9 complete implementations |
+| Days 3-7 | Entity-Aware | Entity persistence, entity-aware retrieval, Turn 4 fix |
+| Weeks 2-4 | Infrastructure | MCP integration, safety architecture, streaming generation |
+| Weeks 5-10 | Edge & Validation | Edge prototype, transparent reasoning, compliance groundwork |
 
 ---
 
 ## 🛡️ Phase 1: Safety-First Infrastructure
 
-**Timeline**: Months 1-6 | **Investment**: $365-415K | **Priority**: CRITICAL
+**Timeline**: Weeks 2-4 (Tactical) + Strategic Phase 1 | **Investment**: Included in Tactical + Phase 1 | **Priority**: CRITICAL
 
 ### Why Safety First?
 
@@ -189,9 +221,9 @@ flowchart TD
 ```mermaid
 flowchart TD
     subgraph Current["Current State"]
-        C1["BGE Semantic<br/>78% accuracy"]
-        C2["303 Prototypes<br/>Manual curation"]
-        C3["Rule-based<br/>Agent selection"]
+        C1["BGE Semantic<br/>92-95% accuracy"]
+        C2["214 Prototypes<br/>Curated + validated"]
+        C3["Semantic<br/>Agent selection"]
     end
 
     subgraph Target["Target State"]
@@ -541,17 +573,19 @@ flowchart TD
 
 ## 💰 Investment & ROI Summary
 
-### Total Investment by Phase
+### Total Investment by Phase (Recalibrated Dec 2025)
 
 ```mermaid
-pie title Investment Allocation ($2.0-2.5M)
-    "Safety Infrastructure" : 365
-    "ML Intelligence" : 205
-    "Edge-Cloud" : 250
-    "Device Integration" : 515
-    "Advanced Features" : 200
-    "Contingency" : 385
+pie title Investment Allocation ($0.9-1.3M over 2 years)
+    "Tactical (Dec-Feb)" : 113
+    "Strategic Phase 1 (Apr-Jul)" : 280
+    "Strategic Phase 2 (Aug-Dec)" : 400
+    "Strategic Phase 3 (2027)" : 650
 ```
+
+> **Note:** Investment reduced by ~$800K from original estimates due to:
+> - 9 major components discovered complete (3,000+ lines)
+> - 40% velocity acceleration based on demonstrated development speed
 
 ### ROI Justification
 
@@ -566,42 +600,59 @@ pie title Investment Allocation ($2.0-2.5M)
 - Enterprise confidence: 2x close rate
 - Premium pricing: +20% per contract
 
-### Revenue Projections (2028)
+### Revenue Projections (2025-2028)
 
-| Revenue Stream | Per Unit | Potential |
-|----------------|----------|-----------|
-| Platform Subscriptions | $8-15/resident/month | $720M-2.16B ARR |
-| Medicare RPM Billing | $1,560/patient/year | $1.56M per 1K patients |
-| Device Integration Fees | $50-200K/integration | $5-20M |
-| Robot Fleet Management | $5-15K/facility/year | $150-450M |
-| Family Portal Premium | $50-100/month | $600M-1.2B |
+| Milestone | Date | Facilities | Residents | ARR |
+|-----------|------|------------|-----------|-----|
+| Pilot Complete | Feb 2026 | 1 | 50 | $0 |
+| Phase 1 End | Jul 2026 | 3 | 200 | $30K |
+| Phase 2 End | Dec 2026 | 10 | 700 | $200K |
+| Phase 3 End | Dec 2027 | 30 | 2,000 | $1M |
+| Post-2027 | 2028 | 100+ | 7,000+ | $5M+ |
+| Vision | 2029 | 200+ | 15,000+ | $10M+ |
+
+### Unit Economics (Target Dec 2027)
+
+| Metric | Value |
+|--------|-------|
+| Price per Resident/Month | $50-75 |
+| Gross Margin | 65-75% |
+| CAC | $500-1,000 |
+| LTV | $2,500-4,000 |
+| LTV:CAC | 4-5x |
 
 ---
 
-## 🎯 Critical Milestones
+## 🎯 Critical Milestones (Accelerated 2-Year Timeline)
 
-| Month | Milestone | Gate Criteria | Risk if Skipped |
-|-------|-----------|---------------|-----------------|
-| **3** | Safety Architecture Complete | Formal proofs pass | ❌ CATASTROPHIC |
-| **6** | Device Abstraction Ready | All protocols tested | ❌ SEVERE |
-| **9** | Edge Infrastructure Deployed | <50ms latency | ⚠️ HIGH |
-| **12** | Compliance Documentation | ISO 13485 ready | ❌ SEVERE |
-| **15** | First RPM Device Live | 1000hrs no incidents | ⚠️ MEDIUM |
-| **18** | Clinical Validation Complete | FDA submission ready | ⚠️ MEDIUM |
-| **24** | Robotics Integration | ROS 2 operational | ⚠️ LOW |
+| Date | Milestone | Gate Criteria | Risk if Skipped |
+|------|-----------|---------------|-----------------|
+| **Feb 2026** | Tactical Complete | 9 components wired, edge prototype | ⚠️ HIGH |
+| **Apr 2026** | Pilot Study Complete | n=20 results positive | ❌ SEVERE |
+| **May 2026** | Edge Production | 3 facilities deployed | ⚠️ HIGH |
+| **Jun 2026** | FDA Pre-Submission | Clear pathway feedback | ❌ SEVERE |
+| **Jul 2026** | First Enterprise Contracts | 3 contracts signed | ⚠️ MEDIUM |
+| **Oct 2026** | FDA De Novo Submitted | Complete package accepted | ❌ CRITICAL |
+| **Dec 2026** | 10 Facility Deployment | Enterprise scaling | ⚠️ MEDIUM |
+| **Jun 2027** | FDA Clearance | De Novo granted | ❌ CRITICAL |
+| **Dec 2027** | Scale Target | 30 facilities, $1M ARR | ⚠️ MEDIUM |
 
 ---
 
 ## 🏁 Strategic Window
 
-**The 3-5 Year Opportunity (2025-2028):**
+**The 2-Year Accelerated Opportunity (Dec 2025 - Dec 2027):**
 
-1. **Demographic Urgency** - Baby Boomers hitting 80+ (highest care need)
-2. **Regulatory Tailwind** - CMS RPM expansion, FHIR mandates
-3. **Technology Maturity** - Edge AI, Matter protocol, ROS 2 production-ready
-4. **Competitive Gap** - No integrated competitor combines AI + RPM + Smart Home + Robotics
+1. **Complete Implementations** - 9 major components ready to wire (3,000+ lines)
+2. **Demonstrated Velocity** - 65K lines built in 4 months by solo developer
+3. **Demographic Urgency** - Baby Boomers hitting 80+ (highest care need)
+4. **Regulatory Tailwind** - CMS RPM expansion (2 days/month vs 16), FHIR mandates
+5. **Technology Maturity** - Edge AI, Matter protocol, ROS 2 production-ready
+6. **Competitive Gap** - No integrated competitor combines AI + RPM + Smart Home + Robotics
 
-**First-mover advantage in comprehensive care orchestration is the goal.**
+**Vision by Dec 2027:** FDA-cleared AI companion serving 2,000+ residents across 30 facilities with $1M ARR.
+
+**Post-2027:** 100+ facilities, Medicare reimbursement, international expansion (UK/EU).
 
 ---
 

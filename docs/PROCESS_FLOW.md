@@ -256,19 +256,18 @@ flowchart TD
 
     B["BGE Embedding<br/>768-dim vector"]
 
-    subgraph Parallel["6 Parallel Retrieval Streams (45ms)"]
-        C1["📚 Knowledge Base<br/>Clinical guidelines"]
-        C2["👤 Life Story<br/>'Methodist church 45yrs'"]
-        C3["💬 Chat History<br/>Last 7 turns"]
-        C4["📊 Assessments<br/>PHQ-9: 12"]
-        C5["📅 Schedule<br/>'Sunday 10am'"]
-        C6["🧠 Semantic Memory<br/>Consolidated"]
+    subgraph Parallel["5 Parallel Retrieval Streams (45ms)"]
+        C1["📚 Knowledge Base<br/>Clinical guidelines (max 8)"]
+        C2["👤 Life Story<br/>'Methodist church 45yrs' (max 5)"]
+        C3["💬 Chat History<br/>Last 12 turns (max 8)"]
+        C4["📊 Assessments<br/>PHQ-9, GAD-7, UCLA-3"]
+        C5["📅 Schedule<br/>Activities, appointments (max 5)"]
     end
 
     D1["BM25<br/>Keyword matching"]
     D2["Semantic<br/>Vector similarity"]
 
-    E["RRF Fusion<br/>Combine & rank results"]
+    E["RRF Fusion (k=60)<br/>Combine & rank results"]
 
     F["📤 Personalized RAG Context<br/>Ready for LLM generation"]
 
@@ -278,19 +277,16 @@ flowchart TD
     B -->|"2c. Query"| C3
     B -->|"2d. Query"| C4
     B -->|"2e. Query"| C5
-    B -->|"2f. Query"| C6
     C1 -->|"3a. BM25 score"| D1
     C2 -->|"3a. BM25 score"| D1
     C3 -->|"3a. BM25 score"| D1
     C4 -->|"3a. BM25 score"| D1
     C5 -->|"3a. BM25 score"| D1
-    C6 -->|"3a. BM25 score"| D1
     C1 -->|"3b. Semantic score"| D2
     C2 -->|"3b. Semantic score"| D2
     C3 -->|"3b. Semantic score"| D2
     C4 -->|"3b. Semantic score"| D2
     C5 -->|"3b. Semantic score"| D2
-    C6 -->|"3b. Semantic score"| D2
     D1 -->|"4. Combine scores"| E
     D2 -->|"4. Combine scores"| E
     E -->|"5. Output context"| F
@@ -316,12 +312,14 @@ flowchart TD
 
     E1["🛡️ Safety Assessment<br/>C-SSRS Protocol"]
     E2["💬 Conversational<br/>General dialogue"]
-    E3["🎯 Behavioral Activation<br/>Depression intervention"]
+    E3["🎯 Behavioral Activation<br/>Depression (35% PHQ-9 reduction)"]
     E4["📖 Reminiscence<br/>Life review therapy"]
-    E5["🧘 Grounding<br/>Anxiety management"]
+    E5["🧘 Grounding<br/>Anxiety (40-60% reduction)"]
+    E6["🌐 Web Search<br/>Current info (weather, news)"]
+    E7["🤝 Bridge<br/>Social connection"]
 
     F1["CLINICAL_PRIORITY<br/>Safety runs exclusively"]
-    F2["SEQUENTIAL<br/>Primary then secondary"]
+    F2["SEQUENTIAL<br/>Primary + max 2 secondary"]
 
     G["📤 Combined Response<br/>Synthesized from agents"]
 
@@ -352,7 +350,7 @@ flowchart TD
 
     B["BGE-base-en-v1.5<br/>768-dim embedding"]
 
-    C["Cosine Similarity<br/>vs 303 prototypes"]
+    C["Cosine Similarity<br/>vs 214 prototypes"]
 
     D{"Confidence<br/>> 0.45?"}
 
@@ -396,10 +394,10 @@ flowchart TD
 | 6 | Agent Orchestration | ~5ms | - |
 | 7 | RAG Retrieval | 30-55ms | **5-15ms (life story cached)** |
 | 8 | Prompt Construction | 5-15ms | - |
-| 9 | LLM Generation | 300-500ms | N/A |
+| 9 | LLM Generation | ~7.6s (M1 Metal, 2 concurrent) | Streaming enabled |
 | 10 | Post-Processing | <5ms | - |
 | 11 | Response Delivery | ~10ms | - |
-| **Total** | **End-to-End** | **P50: ~200ms, P95: ~400ms** |
+| **Total** | **End-to-End** | **~8s (full response), streaming starts ~500ms** |
 
 ### Parallel Execution Strategy
 
@@ -414,7 +412,7 @@ Steps 4-7 (RAG) run in parallel:
 ├── Life story context (5-15ms)      ├─ Bottleneck: knowledge search
 ├── Chat history (10-20ms)           │
 ├── Assessments (5-10ms)             │
-└── Semantic memory (5-10ms)        ─┘
+└── Schedule events (5-10ms)        ─┘
 
 Result: 30-55ms parallel vs 50-110ms sequential = ~2x speedup
 ```
@@ -461,11 +459,11 @@ flowchart TD
 |---------|--------------------| ------------|
 | Crisis Detection | Keyword matching | BGE semantic + 5-level C-SSRS stratification |
 | Response Time | Minutes | <1s (30x faster than Joint Commission requirement) |
-| Personalization | Generic | Life story + clinical context + 6 RAG streams |
+| Personalization | Generic | Life story + clinical context + 5 RAG streams |
 | Clinical Integration | None | PHQ-9, GAD-7, UCLA-3 + C-SSRS assessment |
-| Intent Classification | Rule-based | 303 prototypes + 4-layer caching + FAISS ANN |
+| Intent Classification | Rule-based | 214 prototypes + BGE semantic matching |
 | Compliance | Basic | HIPAA §164.312 + audit logging + PII redaction |
-| Caching | None | 60-70% hit rate, 10x speedup |
+| Caching | None | 60-80% hit rate, 10x speedup |
 | Multi-Intent | Single intent | Up to 3 simultaneous intents (primary + 2 secondary) |
 
 ---
