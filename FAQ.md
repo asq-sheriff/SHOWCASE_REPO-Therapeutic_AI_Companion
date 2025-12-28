@@ -168,10 +168,17 @@ Yes, our therapeutic agents are based on peer-reviewed research:
 | Pilot Study (n=20) | 📋 Planned | Apr 2026 |
 | First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
 | FDA De Novo Submission | 📋 Planned | Oct 2026 |
-| FDA Clearance (target) | 📋 Planned | Jun 2027 |
+| FDA Clearance (target) | 📋 Planned | Q2-Q3 2027 |
+
+**FDA Timeline Scenarios:**
+| Scenario | Timeline | Probability |
+|----------|----------|-------------|
+| Aggressive | Q2 2027 | 60% |
+| Moderate | Q4 2027 | 30% |
+| Conservative | Q2 2028 | 10% |
 
 **Funding:** Bootstrapped with founder's capital — $875K-$1.7M equivalent value built with $0 external funding.
-**Path to FDA:** $1.1-1.5M total investment over 2 years.
+**Path to FDA:** $1.08-1.49M total investment over 2 years.
 
 ---
 
@@ -201,6 +208,63 @@ We're open to conversations with investors who:
 - Can provide strategic value beyond capital (introductions, expertise)
 
 **Stage:** Seed/Pre-A discussions welcome
+
+---
+
+## Technical Architecture Questions
+
+### What is "Edge-First" architecture?
+
+Edge-first means **90% of processing happens on-device** at the facility, with only 10% relying on cloud services. This provides:
+
+| Benefit | Impact |
+|---------|--------|
+| **Privacy** | PHI stays on-premise, reducing attack surface |
+| **Latency** | Sub-second voice response without network round-trips |
+| **Cost** | One-time hardware investment vs. ongoing cloud compute |
+| **Reliability** | 72-hour offline capability during outages |
+
+**Hardware options:** Jetson Orin ($700), Mac Mini M2 ($600), or Raspberry Pi 5 ($100) — each supports 20-100+ residents.
+
+### Is this compliant with EU AI Act?
+
+**Yes.** Lilo is designed for **EU AI Act high-risk classification** as a healthcare AI system:
+
+| Requirement | Lilo Implementation | Status |
+|-------------|---------------------|--------|
+| Risk Management | Documented safety architecture | ✅ In Place |
+| Data Governance | HIPAA-native, bias monitoring | ✅ In Place |
+| Transparency | Explainable crisis detection | ✅ In Place |
+| Human Oversight | Human-in-the-loop for crisis | ✅ In Place |
+| Conformity Assessment | Third-party audit | 📋 Phase 2 |
+
+**Article 5(1)(f) Exemption:** Emotion recognition is allowed for medical/safety purposes. Lilo qualifies as healthcare platform with crisis detection as primary function.
+
+### What is Affective AI / Emotion-Weighted RAG?
+
+Beyond basic sentiment analysis, Lilo uses **Scherer's Component Process Model (CPM)** to understand *why* users feel emotions, not just *what* they feel:
+
+| Enhancement | Description | Impact |
+|-------------|-------------|--------|
+| **Emotion-Weighted RAG** | Retrieves content matching emotional state | +11.76% engagement |
+| **Trajectory Optimization** | Tracks emotion velocity over time | Earlier intervention |
+| **Multi-Modal Fusion** | Combines voice + text analysis | 81% accuracy |
+
+*Example: When a user sounds sad, the system retrieves uplifting memories rather than generic responses.*
+
+### What is Entity-First NLU?
+
+A critical architectural evolution that extracts **entities before intent** to handle context-sensitive scenarios:
+
+**Problem:** "I want to celebrate Robert's birthday" — if Robert (husband) is deceased, a celebration response would be inappropriate.
+
+**Solution:** Entity-first pipeline detects "Robert = deceased husband" and routes to memorial-appropriate response.
+
+| Entity Type | Example | Routing Impact |
+|-------------|---------|----------------|
+| Deceased Person | Robert (husband, deceased) | Memorial tone, no celebration |
+| Living Family | Sarah (daughter) | Social connection prompts |
+| Medical Condition | Hip replacement | Health-aware activities |
 
 ---
 

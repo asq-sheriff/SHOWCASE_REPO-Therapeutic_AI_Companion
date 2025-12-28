@@ -880,6 +880,43 @@ Step 8: Save & Return ───────────────────�
 
 ---
 
+## 🆕 Strategic Differentiators (2025-2027)
+
+### Affective AI Innovation
+
+Beyond basic sentiment analysis, Lilo implements **Scherer's Component Process Model (CPM)** to understand *why* users feel emotions, not just *what* they feel.
+
+| Enhancement | Description | Impact |
+|-------------|-------------|--------|
+| **Emotion-Weighted RAG** | Retrieves content matching emotional state | +11.76% engagement |
+| **Trajectory Optimization** | Tracks emotion velocity and acceleration | Early intervention |
+| **Multi-Modal Fusion** | Combines voice + text for 81% accuracy | Robust detection |
+
+### Entity-First NLU Architecture
+
+Architectural shift from intent-first to entity-first classification to handle context-sensitive scenarios (e.g., deceased relatives, medical conditions).
+
+| Stage | Traditional | Entity-First |
+|-------|-------------|--------------|
+| Step 1 | Intent classification | Entity extraction |
+| Step 2 | Entity extraction | Entity-influenced intent |
+| Step 3 | Response generation | Memorial/safety override |
+
+### Ensemble Crisis Detection Evolution
+
+Current single k-NN detector evolves to 3-method ensemble with voting:
+
+| Method | Phase | Contribution |
+|--------|-------|--------------|
+| Semantic (BGE) | Current | Primary detector |
+| Keyword/Rule | Tactical | Expanded lexicon |
+| ML Classifier | Phase 2 | Cross-encoder voting |
+| Audio Fusion | Phase 2 | Multi-modal verification |
+
+**See [Technical Architecture Brief](./TECHNICAL_ARCHITECTURE_BRIEF.md) for complete 9-section + 12-appendix deep-dive.**
+
+---
+
 ## 📬 Contact
 
 <div align="center">

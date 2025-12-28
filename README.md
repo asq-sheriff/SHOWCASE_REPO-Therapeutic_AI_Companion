@@ -22,6 +22,7 @@
 [![HuggingFace](https://img.shields.io/badge/🤗_Transformers-4.48-FFD21E?style=for-the-badge)](https://huggingface.co)
 [![Docker](https://img.shields.io/badge/Docker-24.0+-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
 [![HIPAA](https://img.shields.io/badge/HIPAA-Compliant-success?style=for-the-badge)](#hipaa-compliance)
+[![Edge-First](https://img.shields.io/badge/Edge--First-90%25_On--Device-purple?style=for-the-badge)](#architecture)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](LICENSE)
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -121,7 +122,8 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 - **Vector search** — PostgreSQL + pgvector (768-dim BGE embeddings)
 - **Containerized deployment** — Docker orchestration + edge prototype
 - **HIPAA compliance** — Full §164.312 technical safeguards
-- **FDA pathway** — De Novo submission Oct 2026, clearance target Jun 2027
+- **Edge-first architecture** — 90% on-device / 10% cloud (Phase 1 Jul 2026)
+- **FDA pathway** — De Novo submission Oct 2026, clearance target Q2-Q3 2027
 
 </td>
 </tr>
@@ -156,7 +158,7 @@ I built **Lilo Engine** to ensure **none go unnoticed**. It's a production-ready
 | Pilot Study (n=20) | 📋 Planned | Apr 2026 |
 | First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
 | FDA De Novo Submission | 📋 Planned | Oct 2026 |
-| FDA Clearance (target) | 📋 Planned | Jun 2027 |
+| FDA Clearance (target) | 📋 Planned | Q2-Q3 2027 |
 
 **Built with founder's capital** — $875K-$1.7M equivalent value, $0 external funding
 
@@ -349,6 +351,7 @@ Full implementation of HIPAA §164.312 Technical Safeguards:
 
 | Document | Audience | Description |
 |----------|----------|-------------|
+| [**Technical Architecture Brief**](docs/TECHNICAL_ARCHITECTURE_BRIEF.md) | CTOs/Architects | Comprehensive 9-section technical deep-dive + 12 appendices |
 | [**Demo Showcase**](docs/DEMO_SHOWCASE.md) | Everyone | 33+ screenshots of all dashboards |
 | [**Technical Portfolio**](docs/TECHNICAL_PORTFOLIO.md) | Engineers/Recruiters | 12 engineering deep-dives |
 | [**Code Samples**](docs/CODE_SAMPLES.md) | Engineers | Production code patterns |

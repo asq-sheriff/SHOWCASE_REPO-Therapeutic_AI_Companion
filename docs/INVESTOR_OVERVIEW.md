@@ -433,7 +433,7 @@ flowchart TD
 - FDA Pre-Submission (Jun 2026)
 - FDA De Novo Submission (Oct 2026)
 - SOC 2 Type II (Q4 2026)
-- **FDA Clearance (Target Jun 2027)**
+- **FDA Clearance (Target Q2-Q3 2027)**
 - HITRUST (Q4 2027)
 
 ---
@@ -540,6 +540,27 @@ flowchart TD
 
 ---
 
+### Phase 5: International Expansion (2027 → 2028+)
+
+**Priority: MEDIUM** — Extends addressable market from US-only to global
+
+| Market | Regulatory Requirement | Timeline | Facilities | Residents |
+|--------|------------------------|----------|------------|-----------|
+| **United States** | FDA De Novo | Q2-Q3 2027 | 28,900 | 835,000 |
+| **European Union** | CE Marking (MDR Class IIa) | Q4 2027 | ~45,000 | 1.2M+ |
+| **United Kingdom** | UKCA Marking | 2028 | ~20,000 | 450,000 |
+| **Canada** | Health Canada Class II | 2028 | ~5,000 | 150,000 |
+
+**Total Global TAM:** 2.5M+ residents across ~100,000 facilities → **$1.3B-2.0B revenue potential**
+
+**Localization Requirements:**
+- Language: EN (US/UK), DE, FR, ES, IT
+- Data Residency: Region-specific edge + cloud
+- Emergency Protocols: 911 (US), 112 (EU), 999 (UK)
+- Privacy Framework: HIPAA (US), GDPR (EU), UK GDPR
+
+---
+
 ### Continuous: ML-Powered Adaptive Intelligence
 
 ```mermaid
@@ -576,7 +597,7 @@ flowchart TD
 | Tactical Complete | Feb 2026 | 1 (pilot) | 50 | $0 |
 | Phase 1 End | Jul 2026 | 3 | 200 | $30K |
 | Phase 2 End | Dec 2026 | 10 | 700 | $200K |
-| FDA Clearance | Jun 2027 | 15 | 1,000 | $500K |
+| FDA Clearance | Q2-Q3 2027 | 15 | 1,000 | $500K |
 | Phase 3 End | Dec 2027 | 30 | 2,000 | **$1M** |
 | Post-2027 | 2028 | 100+ | 7,000+ | **$5M+** |
 
@@ -605,7 +626,7 @@ flowchart TD
 | Tactical | Dec 2025 - Feb 2026 | $80-113K | $80-113K |
 | Strategic Phase 1 | Apr - Jul 2026 | $200-280K | $280-393K |
 | Strategic Phase 2 | Aug - Dec 2026 | $300-400K | $580-793K |
-| Strategic Phase 3 | Jan - Dec 2027 | $500-700K | **$1.1-1.5M** |
+| Strategic Phase 3 | Jan - Dec 2027 | $500-700K | **$1.08-1.49M** |
 
 ### Use of Funds Allocation
 

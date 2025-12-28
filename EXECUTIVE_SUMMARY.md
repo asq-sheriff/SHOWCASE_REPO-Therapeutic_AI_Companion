@@ -47,7 +47,7 @@
 </tr>
 </table>
 
-**Target:** 1.2M assisted living residents in the US alone → **$720M-2.16B ARR potential**
+**Target:** 2.5M+ assisted living residents across US, EU, and UK → **$1.3B-2.0B TAM potential**
 
 ---
 
@@ -63,10 +63,17 @@
 | Pilot Study (n=20) | 📋 Planned | Apr 2026 |
 | First Enterprise Contracts (3 facilities) | 📋 Planned | Jul 2026 |
 | FDA De Novo Submission | 📋 Planned | Oct 2026 |
-| FDA Clearance (target) | 📋 Planned | Jun 2027 |
+| FDA Clearance (target) | 📋 Planned | Q2-Q3 2027 |
 
 **Built with founder's capital** — $875K-$1.7M equivalent development value with $0 external funding.
-**Total investment to FDA clearance:** $1.1-1.5M over 2 years.
+**Total investment to FDA clearance:** $1.08-1.49M over 2 years.
+
+**FDA Timeline Scenarios:**
+| Scenario | Timeline | Probability |
+|----------|----------|-------------|
+| Aggressive | Q2 2027 | 60% |
+| Moderate | Q4 2027 | 30% |
+| Conservative | Q2 2028 | 10% |
 
 ---
 

@@ -75,7 +75,7 @@ flowchart TD
 | **Strategic Phase 3** | Jan - Dec 2027 | $500-700K | High | FDA clearance, 30 facilities, RCT launch, $1M ARR |
 | **Post-2027** | 2028+ | TBD | Medium | RCT complete, Medicare, 100+ facilities, international |
 
-**Total Investment**: $0.9M - $1.3M over 2 years (reduced from $2.0-2.5M due to velocity + complete implementations)
+**Total Investment**: $1.08M - $1.49M over 2 years (reduced from $2.0-2.5M due to velocity + complete implementations)
 
 ---
 
@@ -544,6 +544,97 @@ flowchart TD
 
 ---
 
+## 🧠 Affective AI Innovation (Strategic Differentiator)
+
+**Theoretical Foundation: Scherer's Component Process Model (CPM)**
+
+Beyond basic Valence-Arousal-Dominance (VAD)—which only captures *what* emotion someone feels—Lilo implements Scherer's Component Process Model (CPM) to understand *why* they feel it.
+
+| Approach | Captures | Therapeutic Value |
+|----------|----------|-------------------|
+| **VAD** | Is the user happy/sad? Calm/excited? | Low precision |
+| **CPM** | *Why* is the user sad? What caused it? | High precision—matches intervention to cause |
+
+### Affective AI Enhancements
+
+| Enhancement | Description | Timeline | Impact |
+|-------------|-------------|----------|--------|
+| **Emotion-Weighted RAG** | Retrieval prioritizes emotionally-relevant content | Tactical (Feb 2026) | +11.76% engagement |
+| **Trajectory Optimization** | Models Affect Flow—emotion velocity and acceleration | Phase 1 (Jul 2026) | Early intervention |
+| **Multi-Modal Emotion Fusion** | Cross-attention transformers fuse voice + text | Phase 2 (Dec 2026) | 81% accuracy |
+| **Serendipity Engine** | Prevents engagement fatigue through variety | Phase 2 (Dec 2026) | Sustained engagement |
+
+---
+
+## 🔄 Entity-First NLU Architecture
+
+**The Problem:** Current intent-first classification misses critical context. Example: "I want to celebrate Robert's birthday" triggers celebration response—but Robert (husband) is deceased.
+
+**The Solution:** Entity-first pipeline extracts entities BEFORE intent classification.
+
+| Stage | Current (Intent-First) | Future (Entity-First) |
+|-------|------------------------|----------------------|
+| Step 1 | Intent classification | Entity extraction |
+| Step 2 | Entity extraction | Entity-influenced intent |
+| Step 3 | Response generation | Memorial/safety override |
+
+### Entity-Influenced Routing
+
+| Entity Type | Example Context | Routing Impact |
+|-------------|-----------------|----------------|
+| **Deceased Person** | Robert (husband, deceased 2019) | Memorial tone, no celebration prompts |
+| **Living Family** | Sarah (daughter, visits Sundays) | Social connection, visit anticipation |
+| **Medical** | Diabetes, hip replacement | Health-aware activity suggestions |
+
+---
+
+## 🇪🇺 EU AI Act Compliance
+
+**Classification:** High-Risk (Healthcare AI System)
+
+| Requirement | Lilo Implementation | Status |
+|-------------|---------------------|--------|
+| Risk Management | Documented safety architecture, failure mode analysis | ✅ In Place |
+| Data Governance | HIPAA-native, PHI protection, bias monitoring | ✅ In Place |
+| Technical Documentation | Comprehensive architecture docs | ✅ In Place |
+| Transparency | Explainable crisis detection, user disclosure | ✅ In Place |
+| Human Oversight | Human-in-the-loop for all crisis decisions | ✅ In Place |
+| Conformity Assessment | Third-party audit scheduled | 📋 Phase 2 |
+
+**Article 5(1)(f) Exemption:** Emotion recognition is exempt for medical/safety purposes. Lilo qualifies as a healthcare platform with crisis detection as primary function.
+
+### IEEE P7014 Ethical Guardrails
+
+Anti-manipulation safeguards implemented:
+
+| User State | System Behavior | Prohibited Actions |
+|------------|-----------------|-------------------|
+| High Distress | Switch to supportive mode | No persuasive suggestions |
+| Vulnerable Emotional State | Reduce engagement prompts | No "nudging" toward activities |
+| Crisis Detected | Immediate clinical escalation | No AI-only handling |
+
+---
+
+## 📊 Clinical Validation Pipeline
+
+| Phase | Study Type | Participants | Duration | Purpose |
+|-------|-----------|--------------|----------|---------|
+| Current | Internal QA | N/A | Ongoing | Baseline |
+| Tactical | Retrospective | n=50 | 3 months | Hypothesis generation |
+| Phase 1 | Pilot Study | n=20 | 4 months | Feasibility |
+| Phase 1-2 | Prospective | n=100 | 6 months | FDA evidence |
+| Phase 3 | RCT | n=200 | 12 months | Definitive proof |
+
+**FDA Timeline Scenarios:**
+
+| Scenario | Timeline | Investment | Probability |
+|----------|----------|------------|-------------|
+| Aggressive | FDA clearance Q2 2027 | $1.08-1.49M | 60% |
+| Moderate | FDA clearance Q4 2027 | +$200-300K | 30% |
+| Conservative | FDA clearance Q2 2028 | +$400-500K | 10% |
+
+---
+
 ## 🔧 Technology Stack Evolution
 
 ### Current Stack (Production)
@@ -576,11 +667,11 @@ flowchart TD
 ### Total Investment by Phase (Recalibrated Dec 2025)
 
 ```mermaid
-pie title Investment Allocation ($0.9-1.3M over 2 years)
+pie title Investment Allocation ($1.08-1.49M over 2 years)
     "Tactical (Dec-Feb)" : 113
     "Strategic Phase 1 (Apr-Jul)" : 280
     "Strategic Phase 2 (Aug-Dec)" : 400
-    "Strategic Phase 3 (2027)" : 650
+    "Strategic Phase 3 (2027)" : 700
 ```
 
 > **Note:** Investment reduced by ~$800K from original estimates due to:
